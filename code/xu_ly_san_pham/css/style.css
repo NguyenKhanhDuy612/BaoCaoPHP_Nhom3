@@ -1,0 +1,12 @@
+#phantrang {
+  text-align: center;
+}
+
+th {
+  background-color: cyan;
+  color: black;
+}
+
+.a:nth-child(even) {
+  background-color: #f2f2f2 !important;
+}

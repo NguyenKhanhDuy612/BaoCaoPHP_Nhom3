@@ -1,0 +1,73 @@
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+a span {
+    padding: 15px;
+    transition: .5s;
+    position: relative;
+}
+a span:nth-child(1) {
+    color: #fff;
+    background: #d32f2f;
+}
+a span:nth-child(2) {
+    color: #fff;
+    background: #d32f2f;
+}
+a span:nth-child(1):before {
+    content: attr(data-attr);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #d32f2f;
+    padding: 15px;
+    transition: 0.5S;
+    transform-origin: top;
+    transform: rotateX(90deg) translateY(-50%);
+}
+a:hover span:nth-child(1):before {
+    transform: rotateX(0deg) translateY(0%);
+} 
+a span:nth-child(2):before {
+    content: attr(data-attr);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #3f69b8;
+    padding: 15px;
+    transition: 0.5S;
+    transform-origin: bottom;
+    transform: rotateX(90deg) translateY(50%);
+}
+a:hover span:nth-child(2):before {
+    transform: rotateX(0deg) translateY(0%);
+} 
+a  span:nth-child(1):after {
+  content: attr(data-attr);
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #3f69b8;
+  transform-origin: bottom;
+  transform: rotateX(0deg) translateY(0%);
+  transition: 0.5s;
+}
+a:hover span:nth-child(1):after {
+  transform: rotateX(90deg) translateY(50%);
+}
+a span:nth-child(2):after {
+    content: attr(data-attr);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #d32f2f;
+    padding: 15px;
+    transition: 0.5S;
+    transform-origin: top;
+    transform: rotateX(0deg) translateY(0%);
+}
+a:hover span:nth-child(2):after {
+    transform: rotateX(90deg) translateY(-50%);
+} 
