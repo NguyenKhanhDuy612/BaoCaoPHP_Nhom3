@@ -7,11 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ghép mảng</title>
     <link rel="stylesheet" href="/BaocaoPHP/includes/style.css">
-   
+    <link rel="stylesheet" href="/BaocaoPHP/includes/style2.css">
+    <link rel="stylesheet" href="../../includes/style2.css">
+
+
 </head>
 
 <body>
-<?php include('../../includes/header2.html') ?>
+    <?php include('../../includes/header2.html') ?>
 
     <!-- ===================================================================== -->
     <?php

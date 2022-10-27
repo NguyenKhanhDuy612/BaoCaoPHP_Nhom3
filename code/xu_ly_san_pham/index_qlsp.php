@@ -6,7 +6,7 @@
 	<title>THÔNG TIN SẢN PHẨM</title>
 	<link rel="stylesheet" href="./vendor/bootstrap.css">
 
-	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="../../includes/css_xu_ly_san_pham/style.css">
 
 
 
@@ -38,14 +38,18 @@
 		//     // $sql="SELECT MaNV,Ho,Ten,NgaySinh,GioiTinh,DiaChi,Anh,loainv.TenLoaiNV,phongban.TenPhongBan from nhanvien JOIN loainv JOIN phongban WHERE nhanvien.MaLoaiNV = loainv.MaLoaiNV and nhanvien.MaPhongBan = phongban.MaPhongBan and Ten like '%$search%'";                           
 		// }
 		$result = mysqli_query($abc, $sql . $offset . ', ' . $rowsPerPage);
-		echo "<p align='center'><font size='5'> THÔNG TIN SẢN PHẨM</font></P>";
+		echo "<p class='title' align='center'><font size='5'> THÔNG TIN SẢN PHẨM</font></P>";
 		// echo '<h1>Xin chào: '.$login_session.'</h1>';
 		// echo '<h2><a href = "logout.php">Sign Out</a></h2>';
-		echo '<button type="button" class="btn btn-default btn-lg"><a href="them_sp.php">Thêm sản phẩm</a></button>';
-		// echo '<form action="index_nhanvien.php" method="get">
-		//     <input name="keyword" placeholder="" value="">
-		//     <input type="submit" value="Tìm nhân viên">
-		// 	</form>';
+
+		echo '<div class = "navbar add_search">';
+		echo '<button class="add_search-them" type="button" class="btn btn-default btn-lg"><a href="them_sp.php">Thêm sản phẩm</a></button>';
+		echo '<form class="add_search-tim" action="index_qlsp.php" method="get">
+		    <input name="keyword" placeholder="" value="">
+		    <input type="submit" value="Tìm SP">
+			</form>';
+		echo '</div>';
+
 		echo "<table class='table table-info table-striped'>";
 		echo '<thead><tr> 
 				<th>STT</th> 
@@ -74,8 +78,8 @@
 				// // echo "<td><img width='30px' src='images/$rows[6]'></td>"; 
 				// echo "<td>$rows[7]</td>";
 				// echo "<td>$rows[8]</td>";
-				echo "<td><a onclick='return confirm(`Bạn có muốn sửa không?`)' href='sua_sp.php?id=$rows[0]'><img src='images/sua.png' width='25px' ></td>";
-				echo "<td><a onclick='return confirm(`You có muốn xóa không?`)' href='xoa_sp.php?id=$rows[0]'><img src='images/xoa.jpg' width='25px' ></td>";
+				echo "<td><a onclick='return confirm(`Bạn có muốn sửa không?`)' href='sua_sp.php?id=$rows[0]'><img src='../../images/images_xlsp/sua.png' width='25px' ></td>";
+				echo "<td><a onclick='return confirm(`You có muốn xóa không?`)' href='xoa_sp.php?id=$rows[0]'><img src='../../images/images_xlsp/xoa.jpg' width='25px' ></td>";
 				echo "</tr></tbody>";
 				$stt += 1;
 			} //while

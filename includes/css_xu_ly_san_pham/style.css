@@ -1,0 +1,36 @@
+#phantrang {
+  text-align: center;
+}
+
+th {
+  background-color: cyan;
+  color: black;
+}
+
+.a:nth-child(even) {
+  background-color: #f2f2f2 !important;
+}
+.fix_img {
+  border-radius: 50%;
+}
+.add_search {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+.title {
+  text-align: center;
+  overflow: hidden;
+  color: black;
+  background: cyan;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font: 30px/32px "Roboto", sans-serif;
+  padding: 20px 0;
+  font-size: 36px;
+}
+font {
+  letter-spacing: 3px;
+  font-size: 40px;
+  font-weight: 900;
+}
