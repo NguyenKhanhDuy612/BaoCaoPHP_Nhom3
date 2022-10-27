@@ -16,21 +16,21 @@
     <?php
     require_once("connect.php");
 
-    function buildDropDownList(mysqli_result $result, string $selectName, string $idName, string $idValue, string $selectedValue = null)
-    {
-        if (mysqli_num_rows($result) != 0) {
-            while ($row = mysqli_fetch_array($result)) {
-                echo "<option value='" . $row[$idName] . "' ";
-                if (isset($_REQUEST[$selectName]) && $_REQUEST[$selectName] == $row[$idName]) {
-                    echo "selected='selected'";
-                } else if ($selectedValue == $row[$idName]) {
-                    echo "selected='selected'";
-                }
-                echo ">" . $row[$idValue] . "</option>";
-            }
-        }
-        mysqli_free_result($result);
-    }
+    // function buildDropDownList(mysqli_result $result, string $selectName, string $idName, string $idValue, string $selectedValue = null)
+    // {
+    //     if (mysqli_num_rows($result) != 0) {
+    //         while ($row = mysqli_fetch_array($result)) {
+    //             echo "<option value='" . $row[$idName] . "' ";
+    //             if (isset($_REQUEST[$selectName]) && $_REQUEST[$selectName] == $row[$idName]) {
+    //                 echo "selected='selected'";
+    //             } else if ($selectedValue == $row[$idName]) {
+    //                 echo "selected='selected'";
+    //             }
+    //             echo ">" . $row[$idValue] . "</option>";
+    //         }
+    //     }
+    //     mysqli_free_result($result);
+    // }
 
     $MASP = $_GET['id'];
     $query = "SELECT MASP,TENSP,KICHTHUOC,DONGIA,SLTON,ANHSP
