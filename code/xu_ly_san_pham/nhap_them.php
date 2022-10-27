@@ -1,15 +1,22 @@
+
 <?php
-require('connect.php');
-// include('layout.php');
+function lay_msp()
+{
+    require_once("connect.php");
+    $sql = "SELECT max(MASP) FROM sanpham";
+
+    $result = mysqli_query($abc, $sql);
+
+    if (mysqli_num_rows($result) <> 0) {
+
+        while ($rows = mysqli_fetch_row($result)) {
+            $masp_max = $rows['0'];
+        }
+    }
+    $tmp = substr($masp_max, 3, 5);
+    $masp_new = (int)$tmp + 1;
+    return $masp_new;
+}
+echo "\n SP000" . lay_msp();
+
 ?>
-
-
-<select style="margin:10px;" name="MALSP" id="">
-    <?php $query = "select * from loaisp";    //Hiển thị tên các hãng sữa
-    $result = mysqli_query($abc, $query); ?>
-    <?php while ($rows2 = mysqli_fetch_array($result)) :; ?>
-
-        <option value=""><?php echo $rows2[1]; ?></option>
-        <!-- <option value=""><?php print_r($rows2); ?></option> -->
-    <?php endwhile; ?>
-</select>

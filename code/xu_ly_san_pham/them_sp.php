@@ -8,18 +8,40 @@
 
 <body>
     <?php
-    require('./connect.php');
+    include('./connect.php');
     // include('layout.php');
+    ?>
+
+    <?php
+    function lay_msp()
+    {
+        include("./connect.php");
+        $sql = "SELECT max(MASP) FROM sanpham";
+
+        $result = mysqli_query($abc, $sql);
+
+        if (mysqli_num_rows($result) <> 0) {
+
+            while ($rows = mysqli_fetch_row($result)) {
+                $masp_max = $rows['0'];
+            }
+        }
+        $tmp = substr($masp_max, 3, 5);
+        $masp_new = (int)$tmp + 1;
+        return $masp_new;
+    }
+    $MASP1  = "SP000" . lay_msp();
+
     ?>
     <?php
     if (isset($_POST['luu'])) {
-        // $MASP = 
-        $MALSP = trim($_POST['MALSP']);
+        $MASP = $MASP1;
+        $MALSP = ($_POST['MALSP']);
         $TENSP = trim($_POST['TENSP']);
         $DVT = trim($_POST['DVT']);
         $KICHTHUOC = trim($_POST['KICHTHUOC']);
         $DONGIA = trim($_POST['DONGIA']);
-        $MANCC = trim($_POST['MANCC']);
+        $MANCC = ($_POST['MANCC']);
         $SLTON = trim($_POST['SLTON']);
         $CHITIETSP = trim($_POST['CHITIETSP']);
         move_uploaded_file($_FILES["ANHSP"]["tmp_name"], "images/" . $_FILES["ANHSP"]["name"]);
@@ -31,41 +53,26 @@
         //         SLTON = '$SLTON', ANHSP = '$ANHSP'
         //         WHERE MASP = '$MASP'
         // ";
-        $query = "INSERT INTO sanpham VALUES ('$MALSP','$TENSP','$DVT','$KICHTHUOC',
-				'$DONGIA','$MANCC','$SLTON','$CHITIETSP','$ANHSP')";
+        $query = "INSERT INTO sanpham 
+                    VALUES ('$MASP','$MALSP','$TENSP','$DVT','$KICHTHUOC',
+				'$DONGIA','$MANCC','$SLTON','$CHITIETSP','$ANHSP')
+                 ";
         $result = mysqli_query($abc, $query);
-        header('location: index_qlsp.php?page=1');
+        if (mysqli_affected_rows($abc) == 1) { //neu them thanh cong
+            echo '<div class="alert alert-success"><strong>Thành công!</strong> Một nhân viên mới đã được thêm.</div>';
+        } else //neu khong them duoc
+        {
+            echo "<p>Có lỗi, không thể thêm được</p>";
+            echo "<p>" . mysqli_error($abc) . "<br/><br />Query: " . $query . "</p>";
+        }
+
+        // header('location: index_qlsp.php?page=1');
+        // mysqli_close($abc);
     }
-    // else echo "Vui lòng chọn file upload!";
-    //cap nhat ma hang sua va ma loai sua
-    // $ma_loai_nhan_vien=$_POST['loai_nv'];
-    // $ma_phong_ban=$_POST['phong_ban'];
 
-    // if(empty($errors))//neu khong co loi xay ra
-    // { 
-    // 	$query="INSERT INTO nhanvien VALUES ('$ma_nv','$ho_nv','$ten_nv','$ngay_sinh',
-    // 			'$gioi_tinh','$dia_chi','$ma_loai_nhan_vien','$ma_phong_ban','$anh')";
-    // 	$result=mysqli_query($abc,$query);
-    // 	if(mysqli_affected_rows($abc)==1){//neu them thanh cong
-    // 		echo '<div class="alert alert-success"><strong>Thành công!</strong> Một nhân viên mới đã được thêm.</div>';				
-    // 	}
-    // 	else //neu khong them duoc
-    // 	{
-    // 		echo "<p>Có lỗi, không thể thêm được</p>";
-    // 		echo "<p>".mysqli_error($abc)."<br/><br />Query: ".$query."</p>";	
-    // 	}
-    // }
-    // else
-    // {//neu co loi
-    // 	echo "<h2></h2><p>Có lỗi xảy ra:<br/>";
-    // 	foreach($errors as $msg)
-    // 	{
-    // 		echo "- $msg<br /><\n>";
-    // 	}
-    // 	echo "</p><p>Hãy thử lại.</p>";
-    // }
+    // mã tăng tự động
 
-    // mysqli_close($abc);
+
     ?>
 
     <form action="" method="post" enctype="multipart/form-data">
@@ -78,18 +85,18 @@
                 </td>
             </tr>
             <tr>
+                <td>Mã sản phẩm</td>
+                <td><input disabled required type="text" name="MASP" size="50" value="<?php echo $MASP1 ?>" /></td>
+            </tr>
+            <tr>
                 <td>Mã loại sản phẩm: </td>
 
                 <td>
-
-
                     <select style="margin:10px;" name="MALSP" id="">
-                        <?php $query = "select * from loaisp";    //Hiển thị tên các hãng sữa
-                        $result = mysqli_query($abc, $query); ?>
-                        <?php while ($rows2 = mysqli_fetch_array($result)) :; ?>
-
-                            <option value=""><?php echo $rows2[1]; ?></option>
-                            <!-- <option value=""><?php print_r($rows2); ?></option> -->
+                        <?php $query1 = "select * from loaisp";    //Hiển thị tên các hãng sữa
+                        $result1 = mysqli_query($abc, $query1); ?>
+                        <?php while ($rows1 = mysqli_fetch_array($result1)) :; ?>
+                            <option value="<?php echo $rows1[0]; ?>"><?php echo $rows1[1]; ?></option>
                         <?php endwhile; ?>
                     </select>
 
@@ -113,8 +120,19 @@
                 <td><input required type="text" name="DONGIA" size="50" value="" /></td>
             </tr>
             <tr>
-                <td>Mã nhà cung cấp: </td>
-                <td><input required type="text" name="MANCC" size="50" value="" /></td>
+                <td>Nhà cung cấp: </td>
+
+                <td>
+                    <select style="margin:10px;" name="MANCC" id="">
+                        <?php $query2 = "select * from nhacc";    //Hiển thị tên các hãng sữa
+                        $result2 = mysqli_query($abc, $query2); ?>
+                        <?php while ($rows2 = mysqli_fetch_array($result2)) :; ?>
+
+                            <option value="<?php echo $rows2[0]; ?>"><?php echo $rows2[1]; ?></option>
+                        <?php endwhile; ?>
+                    </select>
+
+                </td>
             </tr>
             <tr>
                 <td>Số lượng tồn: </td>
@@ -144,6 +162,6 @@
 </body>
 
 </html>
-<?php
-include('footer.php');
-?>
+<!-- <?php
+        include('footer.php');
+        ?> -->
