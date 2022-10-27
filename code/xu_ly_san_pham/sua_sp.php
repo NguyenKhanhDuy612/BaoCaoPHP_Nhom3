@@ -92,49 +92,16 @@
 </form>
 <?php
     
-    if($_SERVER['REQUEST_METHOD']=="POST"){
-        $errors=array(); //khởi tạo 1 mảng chứa lỗi
-        //kiem tra ma sua
-        //kiểm tra tên sản phẩm
-        if(empty($_POST['TENSP'])){
-            $errors[]="Bạn chưa nhập tên sản Phẩm";
-        }
-        else{
+    // if($_SERVER['REQUEST_METHOD']=="POST"){
+        if(isset($_POST['luu'])){
+            
             $TENSP=trim($_POST['TENSP']);
-        }
-
-        if(empty($_POST['KICHTHUOC'])){
-            $errors[]="Bạn chưa nhập kích thước";
-        }
-        else{
             $KICHTHUOC=trim($_POST['KICHTHUOC']);
-        }
-
-        if(empty($_POST['DONGIA'])){
-            $errors[]="Bạn chưa nhập đơn giá";
-        }
-        else{
             $DONGIA=trim($_POST['DONGIA']);
-        }
-        
-        if(empty($_POST['SLTON'])){
-            $errors[]="Bạn chưa nhập số lượng tồn";
-        }
-        else{
             $SLTON=trim($_POST['SLTON']);
-        }
-        //cap nhat ma hang sua va ma loai sua
-        // $malnv=$_POST['loaiNV'];
-        // $mapb=$_POST['pb'];
-        //kiểm tra hình sản phẩm và thực hiện upload file
-        if($_FILES['ANHSP']['name']!=NULL)
-        {
             move_uploaded_file($_FILES["ANHSP"]["tmp_name"],"images/".$_FILES["ANHSP"]["name"]);
             $ANHSP=$_FILES['ANHSP']['name'];
-        }
-        else echo "Vui lòng chọn file upload!";
-        if(empty($errors))//neu khong co loi xay ra
-        { 
+        
             $query =
             "UPDATE sanpham
             SET  TENSP = '$TENSP', KICHTHUOC = '$KICHTHUOC', DONGIA = '$DONGIA',
@@ -142,25 +109,8 @@
                     WHERE MASP = '$MASP'
             ";
             $result=mysqli_query($abc,$query);
-            if(mysqli_affected_rows($abc)==1){//neu them thanh cong
-                echo "<div align='center'>Thêm mới thành công!</div>";
-                // header("Location: " . "index_nhanvien2.php");		
-            }
-            else //neu khong them duoc
-            {
-                echo "<p>Có lỗi, không thể thêm được</p>";
-                echo "<p>".mysqli_error($abc)."<br/><br />Query: ".$query."</p>";	
-            }
-        }
-        else
-        {//neu co loi
-            echo "<h2>Lá»—i</h2><p>Có lỗi xảy ra:<br/>";
-            foreach($errors as $msg)
-            {
-                echo "- $msg<br /><\n>";
-            }
-            echo "</p><p>Hãy thử lại.</p>";
-        }
+            header('location: index_qlsp.php?page=1');
+            
     }
     mysqli_close($abc);
     ?>

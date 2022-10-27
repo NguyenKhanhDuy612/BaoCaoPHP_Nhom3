@@ -76,7 +76,7 @@
 					// echo "<td>$rows[7]</td>";
 					// echo "<td>$rows[8]</td>";
 					echo "<td><a onclick='return confirm(`Bạn có muốn sửa không?`)' href='sua_sp.php?id=$rows[0]'><img src='images/sua.png' width='25px' ></td>";
-					echo "<td><a onclick='return confirm(`You có muốn xóa không?`)' href='xoa_nhanvien.php?id=$rows[0]'><img src='images/xoa.jpg' width='25px' ></td>";
+					echo "<td><a onclick='return confirm(`You có muốn xóa không?`)' href='xoa_sp.php?id=$rows[0]'><img src='images/xoa.jpg' width='25px' ></td>";
 					echo "</tr></tbody>";
 					$stt+=1;
 					}//while
