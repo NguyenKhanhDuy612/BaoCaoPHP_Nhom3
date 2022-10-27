@@ -25,7 +25,8 @@
 			}
 			$offset =($_GET['page']-1)*$rowsPerPage;
 			// $sql="SELECT MASP,MALSP,TENSP,DVT,GioiTinh,KICHTHUOC,DONGIA,MANCC,SLTON,CHITIETSP from  SANPHAM LIMIT ";
-			$sql="SELECT MASP,TENSP,KICHTHUOC,DONGIA from  SANPHAM LIMIT ";
+			$sql="SELECT MASP,TENSP,KICHTHUOC,DONGIA,nhacc.TENNCC,SLTON 
+					from  SANPHAM JOIN nhacc LIMIT ";
             // $result = mysqli_query($conn, $sql);
 			// if (!empty($_GET['keyword']))
             // {
@@ -51,10 +52,10 @@
 				<th>Tên sản phẩm</th>
 				<th>Kích thước</th> 
 				<th>Đơn giá</th> 
-				<th>Mã nhà cung cấp</th> 
-				<th>slton</th>
-				<th>slton</th>
-				<th>slton</th>
+				<th>Nhà cung cấp</th> 
+				<th>Số lượng</th>
+				<th>Sửa</th>
+				<th>Xóa</th>
 				
 			</tr></thead>';
 			if(mysqli_num_rows($result)<>0)
@@ -67,14 +68,14 @@
 					echo "<td>$rows[0]</td>";
 					echo "<td>$rows[1]</td>";
 					echo "<td>$rows[2]</td>";
-					echo "<td>$rows[3]0 VND</td>";
-					// echo "<td>$rows[4]</td>"; 
-					// echo "<td>$rows[5]</td>"; 
+					echo "<td>".$rows[3] = number_format($rows[3],0,',','.')." VND"."</td>";
+					echo "<td>$rows[4]</td>"; 
+					echo "<td>$rows[5]</td>"; 
 					// echo "<td>$rows[6]</td>"; 
 					// // echo "<td><img width='30px' src='images/$rows[6]'></td>"; 
 					// echo "<td>$rows[7]</td>";
 					// echo "<td>$rows[8]</td>";
-					echo "<td><a onclick='return confirm(`Bạn có muốn sửa không?`)' href='sua_nhanvien.php?id=$rows[0]'><img src='images/sua.png' width='25px' ></td>";
+					echo "<td><a onclick='return confirm(`Bạn có muốn sửa không?`)' href='sua_sp.php?id=$rows[0]'><img src='images/sua.png' width='25px' ></td>";
 					echo "<td><a onclick='return confirm(`You có muốn xóa không?`)' href='xoa_nhanvien.php?id=$rows[0]'><img src='images/xoa.jpg' width='25px' ></td>";
 					echo "</tr></tbody>";
 					$stt+=1;

@@ -10,3 +10,6 @@ th {
 .a:nth-child(even) {
   background-color: #f2f2f2 !important;
 }
+.fix_img {
+  border-radius: 50%;
+}
