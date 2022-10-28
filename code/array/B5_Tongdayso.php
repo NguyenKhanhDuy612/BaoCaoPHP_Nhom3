@@ -26,9 +26,7 @@
 
 
     $str = "";
-
     $str_kq = "";
-
     $ketqua = "";
 
     if (isset($_POST['tinh'])) {
@@ -73,8 +71,6 @@
                 <td colspan="2" align="center"><label>(Các phần tử trong mảng sẽ cách nhau bằng dấu ",")</label></td>
             </tr>
             <tr>
-
-                
                 <td align="center"><input type="submit" name="tinh" size="20" value="Tính" /></td>
                 <td><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
             </tr>

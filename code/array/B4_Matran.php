@@ -64,18 +64,14 @@
     <center>
     <form action="" method="post">
         <table>
-        
-        
             <tr>
                 <td style="font-size:20px;text-align:center;">Số dòng</td>
-
             </tr>
             <tr>
                 <td><input type="text" name="sodong" style="font-size:20px;text-align:center;" value="<?php if (isset($_POST['sodong'])) echo $_POST['sodong']; ?>"></td>
             </tr>
             <tr>
             <td style="font-size:20px;text-align:center;">Số cột</td>
-
             </tr>
             <tr>
                 <td><input type="text" name="socot" style="font-size:20px;text-align:center;"  value="<?php if (isset($_POST['socot'])) echo $_POST['socot']; ?>"></td>

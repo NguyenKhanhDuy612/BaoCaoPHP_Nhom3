@@ -12,18 +12,18 @@
 <ul class="top-level-menu">
     <li><a href="#">Bài tập Mảng</a>
 	<ul class="second-level-menu">
-            <li><a href="./code/array/B6_Timkiem.php">Tìm kiếm trong mảng</a></li>
-            <li><a href="./code/array/B7_Thaythe.php">Thay thế phần tử</a></li>
-            <li><a href="./code/array/B9_Ghepmang.php">Ghép mảng</a></li>
-			<li><a href="./code/array/Matran.php">Ma trận số nguyên</a></li>
-			<li><a href="./code/array/B4_Tongdayso.php">Tổng dãy số</a></li>
-            <li><a href="./code/array/B5_Sinhmang.php">Min max trong mảng</a></li>
+            <li><a href="./code/array/B1_Timkiem.php">Tìm kiếm trong mảng</a></li>
+            <li><a href="./code/array/B2_Thaythe.php">Thay thế phần tử</a></li>
+            <li><a href="./code/array/B3_Ghepmang.php">Ghép mảng</a></li>
+			<li><a href="./code/array/B4_Matran.php">Ma trận số nguyên</a></li>
+			<li><a href="./code/array/B5_Tongdayso.php">Tổng dãy số</a></li>
+            <li><a href="./code/array/B6_Sinhmang.php">Min max trong mảng</a></li>
         </ul></li>
     <li><a href="#">Bài tập Form</a>
 	<ul class="second-level-menu">
-            <li><a href="./code/form/tinhtiendien.php">Tính tiền điện</a></li>
-            <li><a href="./code/form/pheptinh.php">Tính toán 2 số</a></li>
-            <li><a href="./code/form/dientichhcn.php">Diện tích hình chữ nhật</a></li>
+            <li><a href="./code/form/B1_Tinhtiendien.php">Tính tiền điện</a></li>
+            <li><a href="./code/form/B2_Pheptinh.php">Tính toán 2 số</a></li>
+            <li><a href="./code/form/B3_Dientichhcn.php">Diện tích hình chữ nhật</a></li>
         </ul>
 	</li>
     <li>
@@ -40,7 +40,7 @@
                 </ul>
             </li>
             <li><a href="#">Tìm kiếm</a>
-			<ul class="third-level-menu">
+			<ul class="third-level-menu">   
                     <li><a href="./code/mysql/B9_Timkiemsua.php">Tìm kiếm sữa</a></li>
                     <li><a href="./code/mysql/B10_Timkiemnangcao.php">Tìm kiếm sữa 2</a></li>
                     

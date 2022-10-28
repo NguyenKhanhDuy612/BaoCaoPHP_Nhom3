@@ -1,6 +1,6 @@
 <?php
  
-require_once('PHPMailer/class.phpmailer.php'); //gọi thư viện phpmailer
+include('PHPMailer/class.phpmailer.php'); //gọi thư viện phpmailer
  
 $mail= new PHPMailer(); //khởi tạo đối tượng PHPMailer
 

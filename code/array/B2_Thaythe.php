@@ -107,9 +107,9 @@
             <tr>
                 <td colspan="2" align="center"><label>(Các phần tử trong mảng sẽ cách nhau bằng dấu ",")</label></td>
             </tr>
-            <td></td>
-            <td><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
-
+           <tr>
+           <td><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
+           </tr>
         </table>
 
     </form>

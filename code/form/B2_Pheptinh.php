@@ -7,11 +7,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <title>Phép tính với 2 số</title>
-
+    <link rel="stylesheet" href="/includes/style.css">
     <style>
-        input {
+       
+        td {
+            width: 468px;
+            width: 385px;
+        }
 
-            margin: 5px;
+        table {
+            margin: 0 auto;
 
         }
     </style>
@@ -19,12 +24,16 @@
 </head>
 
 <body>
-
+<?php include('../../includes/header2.html') ?>
     <!-- ketquapheptinh.php -->
     <center>
     <form action="./ketquapheptinh.php" method="POST">
         <table border='0'>
-            <h3>Phép tính với 2 số</h3>
+        <thead>
+                    <th colspan="2" align="center">
+                        <h2>PHÉP TÍNH 2 SỐ</h2>
+                    </th>
+                </thead>
             <tr>
                 <td>Chọn phép tính</td>
                 <td>        
@@ -38,20 +47,21 @@
             </tr>
             <tr>
                 <td>Số thứ nhất:</td>
-                <td><input type="text" name="so1" value="<?php if (isset($_POST['so1'])) echo $_POST['so1']; ?>" /></td>
+                <td><input type="text" size="50" name="so1" value="<?php if (isset($_POST['so1'])) echo $_POST['so1']; ?>" /></td>
             </tr>
 
             <tr>
                 <td>Số thứ hai:</td>
-                <td><input type="text" name="so2" value="<?php if (isset($_POST['so2'])) echo $_POST['so2']; ?>" /></td>
+                <td><input type="text" size="50" name="so2" value="<?php if (isset($_POST['so2'])) echo $_POST['so2']; ?>" /></td>
             </tr>
             <!-- <tr>
                 <td>Kết quả:</td>
                 <td><input type="text" name="kq" value="<?php if (isset($_POST['kq'])) echo $_POST['kq'];?>" /></td>
             </tr> -->
             <tr>
+              
+            <td><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
                 <td ><input type="submit" name="tinh" value="TÍNH" /></td>
-                <td align="right"><a  href="/BaocaoPHP/admin_page.php">Trở về</a></td>
             </tr>
 
         </table>
@@ -62,7 +72,7 @@
     </center>
 
 
-
+    <?php include('../../includes/footer.html') ?>
 </body>
 
 </html>
