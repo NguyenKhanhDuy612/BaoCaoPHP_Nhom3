@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B1_Thông tin hàng sữa</title>
+    <title>Thông tin hàng sữa</title>
+    <link rel="stylesheet" href="/includes/style.css">
 </head>
 <body>
+<style>
+        table{
+            margin: 0 auto;
+        }
+        td{
+            width: 50px;
+        }
+    </style>
+    <?php include('../../includes/header2.html') ?>
 <?php
 
  
@@ -20,7 +30,7 @@ $result = mysqli_query($conn, $sql);
 
 
 echo "<p align='center'><font size='5' color='blue'> THÔNG TIN HÃNG SỮA</font></P>";
-echo "<table align='center' width='700' border='1' cellpadding='2' cellspacing='2' style='border-collapse:collapse'>";
+echo "<table align='center' width='1025' border='1' cellpadding='2' cellspacing='2' style='border-collapse:collapse'>";
 echo '<tr>
 
     <th width="50">STT</th>
@@ -52,5 +62,6 @@ if(mysqli_num_rows($result)<>0)
 echo"</table>";
 
 ?>
+<?php include('../../includes/footer.html') ?>
 </body>
 </html>

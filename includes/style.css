@@ -158,9 +158,9 @@ input, select, .input {
 .third-level-menu > li
 {
     height: 30px;
-    background: #999999;
+    background: cyan;
 }
-.third-level-menu > li:hover { background: #CCCCCC; }
+.third-level-menu > li:hover { background: #fafafa; }
 
 .second-level-menu
 {
