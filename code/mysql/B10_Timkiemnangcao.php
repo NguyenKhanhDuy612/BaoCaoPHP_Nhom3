@@ -1,13 +1,22 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+<!DOCTYPE html>
 <html>
-
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>B9_Tìm kiếm thông tin sữa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tìm kiếm sữa nâng cao</title>
+    <link rel="stylesheet" href="/includes/style.css">
 </head>
 
 <body>
-
+<style>
+        table{
+            margin: 0 auto;
+        }
+        td{
+            width: 50px;
+        }
+    </style>
+<?php include('../../includes/header2.html') ?>
     <?php
     $conn = mysqli_connect('localhost', 'root', '', 'qlbansua')
         or die('Could not connect to MySQL: ' . mysqli_connect_error());
@@ -19,85 +28,90 @@
     $string_querry3 = 'SELECT * FROM hang_sua';
     $result3 = mysqli_query($conn, $string_querry3);
 
+    // if(isset($_POST['tenSua']))
+    //             $tenSua = $_POST['tenSua'];
+    //         else
+    //             $tenSua = " ";
+
+    //         $ls = $_POST['loaiSua'];
+    //         $hs = $_POST['hangSua'];
 
      ?>
+
     <center>
-        <h3>TÌM KIẾM THÔNG TIN SỮA_ NÂNG CAO</h3>
-        <form action="" method="post" >
-            <label style="padding:10px;" for="">Loại sữa</label>
-            <select style="margin:10px;" name="" id="" >
+        <h2>TÌM KIẾM THÔNG TIN SỮA</h2>
+        <form action="" method="post">
+            <label>Loại sữa</label>
+            <select style="margin:10px;" name='loaiSua'>
                 <?php while ($rows2 = mysqli_fetch_array($result2)) :;?>      
-                   <option value=""><?php echo $rows2[1];?></option>
+                   <option><?php echo $rows2[1];?></option>
                 <?php endwhile ;?>
             </select>
-            <select style="margin:10px;" name="" id="" >
+
+            <label>Hãng sữa</label>
+            <select style="margin:10px;" name='hangSua'>
                 <?php while ($rows3 = mysqli_fetch_array($result3)) :;?>      
-                   <option value=""><?php echo $rows3[1];?></option>
+                   <option><?php echo $rows3[1];?></option>
                 <?php endwhile ;?>
             </select> <br>
-            <label style="padding:10px;" for="">Tên sữa</label>
-            <input type="text" name="tenhangsua">
-            <input type="submit" name="timkiem" value="Tìm kiếm"><br>
-         
-        </form>
 
+            <label>Tên sữa</label>
+            <input type="text" name="tenSua" >
+            <input type="submit" name="xl" value="Tìm kiếm"><br>
+        </form>
     </center>
 
     <?php
-   
-    // Ket noi CSDL, require("connect.php");
-    // $conn = mysqli_connect('localhost', 'root', '', 'qlbansua')
-    //     or die('Could not connect to MySQL: ' . mysqli_connect_error());
-    // mysqli_set_charset($conn, 'UTF8');
-
-    if (isset($_POST['tenhangsua'])) $tenhangsua = $_POST['tenhangsua'];
-    else $tenhangsua = '';
-
-    if (isset($_POST['timkiem'])) {
-        $tenhangsua = "'" . $_POST['tenhangsua'] . "'";
-        $string_querry = 'SELECT * FROM sua, hang_sua,loai_sua
-        WHERE sua.Ma_loai_sua = loai_sua.Ma_loai_sua and sua.Ma_hang_sua = hang_sua.Ma_hang_sua 
-         and hang_sua.ten_hang_sua = ' . $tenhangsua;   
-        $result = mysqli_query($conn, $string_querry);
-
-       
-        if (mysqli_num_rows($result) <> 0) {
-            $total =  mysqli_num_rows($result);
-            echo "<center> <b>Có $total sản phẩm tìm được </b> </center> <br>";
-        while ($rows = mysqli_fetch_row($result)) {
+        if(isset($_POST['xl'])){
             
 
-            $rows[5] = number_format($rows[5], 0, ',', '.') . " VNĐ";
-            echo
+            if(isset($_POST['tenSua']))
+                $tenSua = $_POST['tenSua'];
+            else
+                $tenSua = " ";
 
-            "<table align='center' width='700' border='1' cellpadding='2' cellspacing='2' style='border-collapse:collapse'>
-                    <td align='center' colspan='2'  style='color:red;background:cyan'>$rows[1]-$rows[10]</td>
-                    <tr >
-                    <td align='center'>  <img width='200px' height='200px' src='./anh/$rows[8]' /></td>
-                    <td> 
-                        <p> <b>Thành phần dinh dưỡng:</b> <br> $rows[6]</p>
-                        <p> <b>Lợi ích:</b> <br> $rows[7]</p>
-                        <p align='right'><i><b>Trọng lượng:</b> $rows[4] gram - <b>Đơn giá:</b>  $rows[5]</i></p> 
-                    </td>
-                    </tr>";
-                
+            $ls = $_POST['loaiSua'];
+            $hs = $_POST['hangSua'];
+
+           
+            $result = mysqli_query($conn,"SELECT sua.Ten_sua, hang_sua.Ten_hang_sua, sua.Hinh, sua.TP_Dinh_Duong, sua.Loi_ich, sua.Trong_luong, sua.Don_gia FROM sua, loai_sua, hang_sua WHERE sua.Ten_sua like '%$tenSua%' and hang_sua.Ten_hang_sua like '%$hs%' and loai_sua.Ten_loai like '%$ls%' and sua.Ma_hang_sua = hang_sua.Ma_hang_sua and sua.Ma_loai_sua = loai_sua.Ma_loai_sua");
+
+            $dem = mysqli_num_rows($result);
+            echo "<p align='center'> Đã tìm được ".$dem." kết quả!</p>";
+
+            echo "<table align='center' border='1' width='1025' cellpadding='2' cellspacing='2' style='border-collapse:collapse'>";
+             if(mysqli_num_rows($result)<>0)
+             {
+                while($rows=mysqli_fetch_row($result))
+                {  
+                    echo "<tr bgcolor='cyan'>";
+                    echo "<td colspan='2' align='center'><h2>";
+                    echo $rows[0]." - ".$rows[1];
+                    echo "</h2></td>";
+                    echo "</tr>";
+
+                    echo "<tr>";
+                    echo "<td align='center' >";
+                    echo "<img src='./anh/$rows[2]' width=150 height=150 style='padding: 20px;'>";
+                    echo "</td>";
+
+                    echo "<td style=width:400px;'>";
+                    echo "<strong>Thành phần dinh dưỡng: </strong></br>";
+                    echo $rows[3];
+                    echo "</br><strong>Lợi ích: </strong></br>";
+                    echo $rows[4];
+                    echo "<p align='right'>"."<strong>Trọng lượng:</strong> ".$rows[5]."g - <strong>Đơn giá:</strong> ".$rows[6]." VND"."</p>";
+                    echo "</td>";
+                    }
+                 }
+                 echo "<tr><td><a href='/exercise.php'><input type='button'value='Trở về'></a></td></tr>";
+                echo"</table>";
+
+
+
         }
-        }else{
-            echo "<center >Không tìm thấy sản phẩm nào !</center>";
-        }
-
-        echo "</table>";
-
-        // echo mysqli_num_rows($result) ;
-       
-    }
-
     ?>
 
-
-
-
-
+<?php include('../../includes/footer.html') ?>
 </body>
-
 </html>

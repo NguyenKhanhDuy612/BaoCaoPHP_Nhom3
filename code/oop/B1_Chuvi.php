@@ -6,33 +6,16 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <title>Tinh chu vi va dien tich</title>
+    <title>Tính chu vi và diện tích</title>
+    <link rel="stylesheet" href="/includes/style.css">
 
     <style>
-        fieldset {
-
-            background-color: #eeeeee;
-
+       
+        table{
+            margin:0 auto;
         }
-
-
-
-        legend {
-
-            background-color: gray;
-
-            color: white;
-
-            padding: 5px 10px;
-
-        }
-
-
-
-        input {
-
-            margin: 5px;
-
+        td{
+            width: 385px;
         }
     </style>
 
@@ -40,6 +23,7 @@
 
 <body>
 
+<?php include('../../includes/header2.html') ?>
     <?php
 
     abstract class Hinh
@@ -158,12 +142,16 @@
     ?>
     <form action="" method="post">
 
-        <fieldset >
-            <legend>Tính chu vi và diện tích các hình học đơn giản</legend>
+        <!-- <fieldset >
+            <legend>Tính chu vi và diện tích các hình học đơn giản</legend> -->
             <table border='0'>
+            <th colspan="2">
+                    <h2>TÍNH CHU VI VÀ DIỆN TÍCH</h2>
+                </th>
+
                 <tr>
                     <td>Chọn hình</td>
-                    <td><input type="radio" name="hinh" value="hv" <?php if (isset($_POST['hinh']) && ($_POST['hinh']) == "hv") echo 'checked="checked"' ?> />Hình vuông
+                    <td style="font-size: 17px;"><input type="radio" name="hinh" value="hv" <?php if (isset($_POST['hinh']) && ($_POST['hinh']) == "hv") echo 'checked="checked"' ?> />Hình vuông
 
                         <input type="radio" name="hinh" value="ht" <?php if (isset($_POST['hinh']) && ($_POST['hinh']) == "ht") echo 'checked="checked"' ?> />Hình tròn
                         <input type="radio" name="hinh" value="hcn" <?php if (isset($_POST['hinh']) && ($_POST['hinh']) == "hcn") echo 'checked="checked"' ?> />Hình chữ nhật
@@ -173,7 +161,7 @@
                 </tr>
                 <tr>
                     <td>Nhập tên:</td>
-                    <td><input type="text" name="ten" value="<?php if (isset($_POST['ten'])) echo $_POST['ten']; ?>" /></td>
+                    <td><input type="text" size="50" name="ten" value="<?php if (isset($_POST['ten'])) echo $_POST['ten']; ?>" /></td>
                 </tr>
                 <tr>
                     <td>Nhập độ dài:</td>
@@ -181,14 +169,16 @@
                 </tr>
                 <tr>
                     <td>Kết quả:</td>
-                    <td><textarea name="ketqua" cols="70" rows="4" disabled="disabled"><?php echo $str; ?></textarea></td>
+                    <td><textarea name="ketqua" cols="50" rows="4" disabled="disabled"><?php echo $str; ?></textarea></td>
                 </tr>
                 <tr>
-                    <td colspan="2" align="center"><input type="submit" name="tinh" value="TÍNH" /></td>
+                <td><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
+                    <td ><input type="submit" name="tinh" value="TÍNH" /></td>
                 </tr>
             </table>
-        </fieldset>
+        <!-- </fieldset> -->
     </form>
+    <?php include('../../includes/footer.html') ?>
 </body>
 
 </html>

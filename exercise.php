@@ -29,8 +29,9 @@
     <li>
         <a href="#">Bài tập MySQL</a>
         <ul class="second-level-menu">
+            <li><a href="./code//mysql/B1_Thongtinhangsua.php">Thông tin hãng sữa</a></li>
             <li><a href="./code/mysql/B2_Thongtinkhachhang.php">Thông tin khách hàng</a></li>
-            <li><a href="./code//mysql//B1_Thongtinhangsua.php">Thông tin hãng sữa</a></li>
+            
             <li>
                 <a href="#">Thông tin sữa</a>
                 <ul class="third-level-menu">
@@ -50,8 +51,10 @@
     </li>
 	<li><a href="#">Bài tập OOP</a>
 	<ul class="second-level-menu">
+            <li><a href="./code/oop/B1_Chuvi.php">Tính chu vi</a></li>
             <li><a href="./code/oop/B2_QuanlyNV.php">Quản lí nhân viên</a></li>
-            <li><a href="./code/oop/B4_Chuvi.php">Tính chu vi</a></li>
+            <li><a href="./code/oop/B3_Phanso.php">Tính toán 2 phân số</a></li>
+           
         </ul>
 	</li>
     <li><a href="#">Bài tập File</a></li>
