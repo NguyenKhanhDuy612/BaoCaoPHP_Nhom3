@@ -24,9 +24,9 @@
 		$mFrom = "duy01657853612@gmail.com"; // Địa chỉ email của người gửi
 		$nFrom = "NguyenKhanhDuy"; //mail được từ đâu, thường để tên cơ quan/công ty
 		$mPass = "qbndfjhhobnngguf"; //mật khẩu email của người gửi
-		$mTo = $_POST['toMail']; //địa chỉ email của người nhận
+		$mTo = $_POST['nguoi_nhan']; //địa chỉ email của người nhận
 		$nTo = ""; //tên người nhận
-		$body = $_POST['content-mail'];
+		$body = $_POST['noi_dung'];
 		$title = "Test email ne he"; //tiêu đề email
 		$mail->Username   = $mFrom; //khai báo địa chỉ email
 		$mail->Password   = $mPass;  //khai báo mật khẩu
