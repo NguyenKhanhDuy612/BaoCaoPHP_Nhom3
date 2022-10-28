@@ -8,27 +8,21 @@
 
 <title>Tìm kiếm trong mảng </title>
 
-<style type="text/css">
+<!-- <style type="text/css">
 
     table{
-
-        color: #ffff00;
-
-        background-color: gray;     
-
+        color: black;
+        font-weight: 900;;
+        background-color: gray;
+        font-size: 18px;     
     }
-
     table th{
-
-        background-color: blue;
-
+        background-color: cyan;
         font-style: vni-times;
-
-        color: yellow;
-
+        color: black;
     }
 
-</style>
+</style> -->
 
 <link rel="stylesheet" href="/includes/style.css">
 </head>
@@ -41,53 +35,36 @@
 <?php 
 
 function tim_kiem($arr,$so){
-
     for($i=0;$i<count($arr);$i++){
-
         if($arr[$i]==$so){
-
             return $i;
-
         }
 
     }
-
     return -1;
 
 }
 
 $str="";
-
 $str_kq="";
-
 $ketqua="";
 
 if(isset($_POST['so'])){
-
     $so=trim($_POST['so']);
-
 }
 
 if(isset($_POST['so']) && isset($_POST['tinh'])){
 
     $str=trim($_POST['mang']);
-
     $arr=explode(",",$str);
-
     $str_kq=implode(",",$arr);
-
     $vitri=tim_kiem($arr,$so);
 
     if($vitri!=-1){
-
         $ketqua="Tìm thấy ".$so." tại vị trí thứ ". $vitri ." của mảng.";
-
     }
-
     else{
-
         $ketqua="Không tìm thấy ".$so." trong mảng.";
-
     }
 
 }

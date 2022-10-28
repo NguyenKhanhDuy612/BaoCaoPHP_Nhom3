@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thay thế phần tử mảng</title>
-    <link rel="stylesheet" href="/BaocaoPHP/includes/style.css">
-   
+    <link rel="stylesheet" href="/includes/style.css">
+    
 </head>
 
 <body>
@@ -37,15 +37,15 @@
     $ketqua = "";
 
     if (isset($_POST['gtc'])) {
-        $gtc = $_POST['gtc'];
+        $gtc = trim($_POST['gtc']);
     }
     if (isset($_POST['gtm'])) {
-        $gtm = $_POST['gtm'];
+        $gtm = trim($_POST['gtm']);
     }
 
     if (isset($_POST['gtc']) && isset($_POST['tinh'])) {
 
-        $str = $_POST['mang'];
+        $str = trim($_POST['mang']);
         $arr = explode(",", $str);
         $str_kq = implode(", ", $arr);
         $vitri = timKiem($arr, $gtc);
@@ -63,18 +63,8 @@
     <!-- ======================================================== -->
 
     <style type="text/css">
-        table {
-            text-transform: uppercase;
-            color: black;
-            font-weight: 800;
-            background-color: gray;
-        }
-
-        table th {
-            background-color: blue;
-            font-style: vni-times;
-            color: yellow;
-
+        td {
+            width: 385px;
         }
     </style>
     <!-- ======================================================== -->
@@ -91,7 +81,7 @@
             </th>
             <tr>
                 <td>Nhập mảng:</td>
-                <td><input type="text" name="mang" size="70" value="<?php echo $str; ?> " /></td>
+                <td><input type="text" name="mang" size="50" value="<?php echo $str; ?> " /></td>
             </tr>
             <tr>
                 <td>Phần tử muốn thay thế:</td>
@@ -107,18 +97,18 @@
             </tr>
             <tr>
                 <td>Mảng cũ:</td>
-                <td><input type="text" name="mang" size="70" disabled="disabled" value="<?php echo $str; ?> " /></td>
+                <td><input type="text" name="mang" size="50" disabled="disabled" value="<?php echo $str; ?> " /></td>
             </tr>
             <tr>
                 <td>Mảng mới:</td>
-                <td><input type="text" name="mang_kq" size="70" disabled="disabled" value="<?php echo $ketqua; ?> " /></td>
+                <td><input type="text" name="mang_kq" size="50" disabled="disabled" value="<?php echo $ketqua; ?> " /></td>
             </tr>
 
             <tr>
                 <td colspan="2" align="center"><label>(Các phần tử trong mảng sẽ cách nhau bằng dấu ",")</label></td>
             </tr>
             <td></td>
-            <tr><td align="right"><a  href="/BaocaoPHP/admin_page.php">Trở về</a></td></tr>
+            <td><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
 
         </table>
 

@@ -7,8 +7,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <title>Mang tim kiem va thay the</title>
-    <link rel="stylesheet" href="/BaocaoPHP/includes/style.css">
-    <style type="text/css">
+    <link rel="stylesheet" href="/includes/style.css">
+    <!-- <style type="text/css">
         table {
 
             color: #ffff00;
@@ -26,12 +26,12 @@
             color: yellow;
 
         }
-    </style>
+    </style> -->
 
 </head>
 
 <body>
-<?php include('../../includes/header.html') ?>
+<?php include('../../includes/header2.html') ?>
     <?php
     function taoMang()
     {
@@ -143,13 +143,13 @@
 
             </tr>
             </tr>
-            <td>Tổng các phần tử trong mảng:</td>
+            <td>Tổng các phần tử:</td>
 
             <td><input type="text" name="sum" size="70" disabled="disabled" value="<?php echo $sum; ?> " /></td>
 
             </tr>
             <tr>
-                    <td align="right"><a href="/BaocaoPHP/admin_page.php">Trở về</a></td>
+            <td align="center"><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
                 </tr>
 
 

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ma trận số nguyên</title>
-    <link rel="stylesheet" href="/BaocaoPHP/includes/style.css">
+    <link rel="stylesheet" href="/includes/style.css">
 </head>
 
 <body>
@@ -64,32 +64,31 @@
     <center>
     <form action="" method="post">
         <table>
+        
+        
             <tr>
-
-            </tr>
-            <tr><h4>MA TRẬN SỐ NGUYÊN</h4></tr>
-            <tr>
-                <td>Số dòng</td>
-
-            </tr>
-            <tr>
-                <td><input type="text" name="sodong" value="<?php if (isset($_POST['sodong'])) echo $_POST['sodong']; ?>"></td>
-            </tr>
-            <tr>
-                <td>Số cột</td>
+                <td style="font-size:20px;text-align:center;">Số dòng</td>
 
             </tr>
             <tr>
-                <td><input type="text" name="socot" value="<?php if (isset($_POST['socot'])) echo $_POST['socot']; ?>"></td>
+                <td><input type="text" name="sodong" style="font-size:20px;text-align:center;" value="<?php if (isset($_POST['sodong'])) echo $_POST['sodong']; ?>"></td>
+            </tr>
+            <tr>
+            <td style="font-size:20px;text-align:center;">Số cột</td>
+
+            </tr>
+            <tr>
+                <td><input type="text" name="socot" style="font-size:20px;text-align:center;"  value="<?php if (isset($_POST['socot'])) echo $_POST['socot']; ?>"></td>
             </tr>
             <tr></tr>
-            <td>Kết quả</td>
+        
+            <td style="font-size:20px;text-align:center;">Kết quả</td>
             <tr>
-                <td><textarea name="kq" id="" cols="21" rows="10" readonly="true" style="resize: none;"><?php echo $kq  ?></textarea></td>
+                <td><textarea name="kq" id="" cols="23" rows="10" readonly="true" style="resize: none; font-size:20px;text-align:center;"><?php echo $kq  ?></textarea></td>
             </tr>
             <tr>
-                <td><input type="submit" name="thuchien" value="Thực hiện"></td>
-                <td><a href="/BaocaoPHP/admin_page.php">Trở về</a></td>
+                <td style="text-align:left"><input type="submit" name="thuchien" value="Thực hiện"></td>
+                <td ><a  href="/exercise.php"><input type="button" value="Trở về"></a></td>
             </tr>
           
         </table>

@@ -58,7 +58,7 @@
 </ul>
 
 	<center>
-		<img src="./images/bg.jpg" width="750px"  alt="">
+		<img src="./images/bg.jpg" width="1025px"  alt="">
 	</center>
 
 <?php include('includes/footer.html'); ?>
