@@ -26,7 +26,7 @@
 		$mPass = "qbndfjhhobnngguf"; //mật khẩu email của người gửi
 		$mTo = $_POST['nguoi_nhan']; //địa chỉ email của người nhận
 		$nTo = ""; //tên người nhận
-		$body = $_POST['noi_dung'];
+		$body = $_POST['content-mail'];
 		$title = "Test email ne he"; //tiêu đề email
 		$mail->Username   = $mFrom; //khai báo địa chỉ email
 		$mail->Password   = $mPass;  //khai báo mật khẩu

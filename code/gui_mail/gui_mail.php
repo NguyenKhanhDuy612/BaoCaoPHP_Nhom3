@@ -1,5 +1,5 @@
 <?php
-$page_title = 'Gửi Mail';
+
 include('../../includes/header2.html');
 ?>
 <script src="./ckeditor/ckeditor.js"></script>
@@ -12,7 +12,7 @@ include('../../includes/header2.html');
                 <label>Email nhận: </label>
                 <input type="email" name="nguoi_nhan" style="width: 250px;" required>
             </div>
-            <textarea name="noi_dung" required>
+            <textarea name="content-mail" required>
 
             </textarea>
             <div style="margin-top: 12px;">
