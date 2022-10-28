@@ -14,6 +14,7 @@
     mysqli_set_charset($conn, 'UTF8');
 
     $id  = "'".$_GET['id']."'";
+
     $result = mysqli_query($conn,'SELECT * FROM sua, hang_sua WHERE  sua.Ma_hang_sua = hang_sua.Ma_hang_sua and sua.Ma_sua = '.$id );
     // echo 'SELECT * FROM sua WHERE ma_sua = '.$id;
 
