@@ -7,32 +7,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <title>Diện tích hình chữ nhật</title>
-
-    <style type="text/css">
-        body {
-            background-color: #0000;
+    <link rel="stylesheet" href="/includes/style.css">
+    <style>
+        td {
+            width: 468px;
+            width: 385px;
         }
 
         table {
-            background: cyan;
-            border: 0 solid yellow;
             margin: 0 auto;
-        }
 
-        thead {
-            background: cyan;
-        }
-
-        td {
-            color: blue;
-        }
-
-        h3 {
-            font-family: verdana;
-            text-align: center;
-            /* text-anchor: middle; */
-            color: #ff8100;
-            font-size: medium;
         }
     </style>
 
@@ -41,7 +25,7 @@
 
 
 <body>
-
+<?php include('../../includes/header2.html') ?>
     <?php
 
     if (isset($_POST['chieudai']))
@@ -69,7 +53,7 @@
             </thead>
             <tr>
                 <td>Chiều dài:</td>
-                <td><input type="text" name="chieudai" value="<?php echo $chieudai; ?> " /></td>
+                <td><input type="text" size="50" name="chieudai" value="<?php echo $chieudai; ?> " /></td>
             </tr>
             <tr>
                 <td>Chiều rộng:</td>
@@ -81,12 +65,9 @@
                 <td><input type="text" name="dientich" disabled="disabled" value="<?php echo $dientich; ?> " /></td>
             </tr>
             <tr>
-                <td ><input type="submit" value="Tính" name="tinh" /></td>
-                <td align="right"><a href="/BaocaoPHP/admin_page.php">Trở về</a></td>
+                <td><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
+                <td ><input type="submit" value="   Tính   " name="tinh" /></td>
             </tr>
-
-
-
         </table>
 
 
@@ -94,7 +75,7 @@
     </form>
 
 
-
+    <?php include('../../includes/footer.html') ?>
 </body>
 
 
