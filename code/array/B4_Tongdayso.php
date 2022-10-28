@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tổng dãy số nguyên</title>
-    <link rel="stylesheet" href="/BaocaoPHP/includes/style.css">
+    <link rel="stylesheet" href="/includes/style.css">
+
 </head>
 
 <body>
@@ -40,15 +41,19 @@
         $ketqua  = tong($arr);
     }
     ?>
-
+  <style type="text/css">
+        td {
+            width: 385px;
+        }
+    </style>
 
 <center>
     <form action="" method="post">
 
-        <table border="0" cellpadding="0">
+        <table  border="0" cellpadding="0">
 
             <th colspan="2">
-                <h2 style="color:red ;">TÍNH TỔNG DÃY SỐ</h2>
+                <h2 >TÍNH TỔNG DÃY SỐ</h2>
             </th>
 
             <tr>
@@ -69,9 +74,9 @@
             </tr>
             <tr>
 
-                <td></td>
-                <td><input type="submit" name="tinh" size="20" value="Tính" /></td>
-                <td><a href="/BaocaoPHP/admin_page.php">Trở về</a></td>
+                
+                <td align="center"><input type="submit" name="tinh" size="20" value="Tính" /></td>
+                <td><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
             </tr>
         </table>
 

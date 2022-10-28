@@ -1,12 +1,12 @@
 <?php
 
 
-$conn = mysqli_connect ('localhost','root','','qlsg') OR die ('Could not connect to MySQL: ' . mysqli_connect_error() );
+$conn = mysqli_connect('localhost', 'root', '', 'qlsg') or die('Could not connect to MySQL: ' . mysqli_connect_error());
 mysqli_set_charset($conn, 'UTF8');
 
 session_start();
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
    $tenDN = mysqli_real_escape_string($conn, $_POST['tenDN']);
    $mk = $_POST['mk'];
 
@@ -14,26 +14,25 @@ if(isset($_POST['submit'])){
 
    $result = mysqli_query($conn, $select);
 
-   if(mysqli_num_rows($result) <> 0){
-      while($rows=mysqli_fetch_row($result)){
-         if($rows[4] == 'Quản Lý' || $rows[4] == 'Quản trị viên'){
+   if (mysqli_num_rows($result) <> 0) {
+      while ($rows = mysqli_fetch_row($result)) {
+         if ($rows[4] == 'Quản Lý' || $rows[4] == 'Quản trị viên') {
             $_SESSION['tenQuanTriVien'] = $rows[1];
             header('location:admin_page.php');
-         }
-         elseif($rows[4] == 'Nhân Viên'){
+         } elseif ($rows[4] == 'Nhân Viên') {
             $_SESSION['tenNguoiDung'] = $rows[1];
             header('location:user_page.php');
          }
       }
-   }else{
+   } else {
       $error[] = 'Tên đăng nhập hoặc mật khẩu không đúng!';
    }
-
 };
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,27 +43,29 @@ if(isset($_POST['submit'])){
    <link rel="stylesheet" href="./includes/style2.css">
 
 </head>
+
 <body>
-   
-<div class="form-container">
 
-   <form action="" method="post">
-      <h3>Đăng nhập</h3>
-      <!-- <h3>Đăng nhập</h3> -->
-      <?php
-      if(isset($error)){
-         foreach($error as $error){
-            echo '<span class="error-msg">'.$error.'</span>';
+   <div class="form-container">
+
+      <form action="" method="post">
+         <h3>Đăng nhập</h3>
+         <!-- <h3>Đăng nhập</h3> -->
+         <?php
+         if (isset($error)) {
+            foreach ($error as $error) {
+               echo '<span class="error-msg">' . $error . '</span>';
+            };
          };
-      };
-      ?>
-      <input type="text" name="tenDN" required placeholder="Nhập tên đăng nhập">
-      <input type="password" name="mk" required placeholder="Nhập mật khẩu">
-      <input type="submit" name="submit" value="Đăng nhập" class="form-btn">
-      <p>Bạn chưa có tài khoản? <a href="register_form.php">Đăng ký ngay</a></p>
-   </form>
+         ?>
+         <input type="text" name="tenDN" required placeholder="Nhập tên đăng nhập">
+         <input type="password" name="mk" required placeholder="Nhập mật khẩu">
+         <input type="submit" name="submit" value="Đăng nhập" class="form-btn">
+         <p>Bạn chưa có tài khoản? <a href="register_form.php">Đăng ký ngay</a></p>
+      </form>
 
-</div>
+   </div>
 
 </body>
+
 </html>

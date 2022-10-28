@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ghép mảng</title>
-    <link rel="stylesheet" href="/BaocaoPHP/includes/style.css">
-    <link rel="stylesheet" href="/BaocaoPHP/includes/style2.css">
-    <link rel="stylesheet" href="../../includes/style2.css">
+
+    <link rel="stylesheet" href="/includes/style.css">
 
 
 </head>
@@ -98,18 +97,8 @@
 
     <!-- ============================================================ -->
     <style type="text/css">
-        table {
-            text-transform: uppercase;
-            color: black;
-            font-weight: 800;
-            background-color: gray;
-        }
-
-        table th {
-            background-color: blue;
-            font-style: vni-times;
-            color: cyan;
-
+        td {
+            width: 385px;
         }
     </style>
     <!-- ======================================================== -->
@@ -124,11 +113,11 @@
                 </th>
                 <tr>
                     <td>Nhập mảng A:</td>
-                    <td><input type="text" name="mangA" size="70" value="<?php echo $strA; ?> " /></td>
+                    <td><input type="text" name="mangA" size="50" value="<?php echo $strA; ?> " /></td>
                 </tr>
                 <tr>
                     <td>Nhập mảng B:</td>
-                    <td><input type="text" name="mangB" size="70" value="<?php echo $strB; ?> " /></td>
+                    <td><input type="text" name="mangB" size="50" value="<?php echo $strB; ?> " /></td>
                 </tr>
 
                 <tr>
@@ -145,22 +134,22 @@
                     <td><input type="text" name="countB" value="<?php echo $countB; ?> " /></td>
                 </tr>
                 <td>Mảng C: </td>
-                <td><input type="text" name="mdg" size="70" disabled="disabled" value="<?php echo $mdg; ?> " /></td>
+                <td><input type="text" name="mdg" size="50" disabled="disabled" value="<?php echo $mdg; ?> " /></td>
                 </tr>
                 <tr>
                     <td>Mảng tăng dần: </td>
-                    <td><input type="text" name="mtd" size="70" disabled="disabled" value="<?php echo $mtd; ?> " /></td>
+                    <td><input type="text" name="mtd" size="50" disabled="disabled" value="<?php echo $mtd; ?> " /></td>
                 </tr>
                 <tr>
                     <td>Mảng giảm dần: </td>
-                    <td><input type="text" name="mgd" size="70" disabled="disabled" value="<?php echo $mgd; ?> " /></td>
+                    <td><input type="text" name="mgd" size="50" disabled="disabled" value="<?php echo $mgd; ?> " /></td>
                 </tr>
 
                 <tr>
                     <td colspan="2" align="center"><label>(Các phần tử trong mảng sẽ cách nhau bằng dấu ",")</label></td>
                 </tr>
                 <tr>
-                    <td align="right"><a href="/BaocaoPHP/admin_page.php">Trở về</a></td>
+                <td><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
                 </tr>
 
             </table>
