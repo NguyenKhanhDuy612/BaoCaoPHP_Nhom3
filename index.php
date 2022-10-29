@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
             header('location:admin_page.php');
          } elseif ($rows[4] == 'Nhân Viên') {
             $_SESSION['tenNguoiDung'] = $rows[1];
-            header('location:user_page.php');
+            header('location: user_page.php');
          }
       }
    } else {
