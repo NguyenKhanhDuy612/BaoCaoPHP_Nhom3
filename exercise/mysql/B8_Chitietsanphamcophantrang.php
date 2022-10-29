@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Thông tin chi tiết sữa</title>
-    <link rel="stylesheet" href="/includes/style.css">
+    <link rel="stylesheet" href="/includes/css/style_page.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
             width: 50px;
         }
     </style>
-<?php include('../../includes/header2.html') ?>
+<?php include('../../includes/html/header2.html') ?>
     <?php
     // Ket noi CSDL
     //require("connect.php");
@@ -54,7 +54,7 @@
            
         }
     }
-    echo "<td><a href='/exercise.php'><input type='button'value='Trở về'></a></td>";
+    echo "<td><a href='/website/exercise.php'><input type='button'value='Trở về'></a></td>";
         echo "</table>";
 
 
@@ -80,7 +80,7 @@
     ?>
 
 
-<?php include('../../includes/footer.html') ?>
+<?php include('../../includes/html/footer.html') ?>
 </body>
 
 </html>

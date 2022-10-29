@@ -2,7 +2,7 @@
 	<!-- ================== Phần thay đổi nằm ở đây =========================== -->
 	<h4>Thông báo gửi mail</h4>
 	<?php
-	require_once('./PHPMailer/class.phpmailer.php'); //gọi thư viện phpmailer
+	require_once('./PHPMailer/PHPMailer/class.phpmailer.php'); //gọi thư viện phpmailer
 
 	if (isset($_POST['gui']) && isset($_POST['toMail']) && isset($_POST['content-mail'])) {
 		$mail = new PHPMailer(); //khởi tạo đối tượng PHPMailer

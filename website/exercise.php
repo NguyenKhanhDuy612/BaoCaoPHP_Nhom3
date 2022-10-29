@@ -17,21 +17,19 @@
     <ul class="top-level-menu">
         <li><a href="#">Bài tập Mảng</a>
             <ul class="second-level-menu">
-                <li><a href="../exercise/array/B1_Mangsonguyen.php">Mảng số nguyên</a></li>
+                <li><a href="../exercise/array/B6_Sinhmang.php">Min max trong mảng</a></li>
                 <li><a href="../exercise/array/B4_Tongdayso.php">Tổng dãy số</a></li>
-                <li><a href="../exercise/array/B5_Sinhmang.php">Min max trong mảng</a></li>
                 <li><a href="../exercise/array/B6_Timkiem.php">Tìm kiếm trong mảng</a></li>
                 <li><a href="../exercise/array/B7_Thaythe.php">Thay thế phần tử</a></li>
-                <li><a href="../exercise/array/B8_Sapxepmang.php">Sắp xếp mảng </a></li>
                 <li><a href="../exercise/array/B9_Ghepmang.php">Ghép mảng</a></li>
                 <li><a href="../exercise/array/Matran.php">Ma trận số nguyên</a></li>
             </ul>
         </li>
         <li><a href="#">Bài tập Form</a>
             <ul class="second-level-menu">
-                <li><a href="../exercise/form/tinhtiendien.php">Tính tiền điện</a></li>
-                <li><a href="../exercise/form/pheptinh.php">Tính toán 2 số</a></li>
-                <li><a href="../exercise/form/dientichhcn.php">Diện tích hình chữ nhật</a></li>
+                <li><a href="../exercise/form/B1_Tinhtiendien.php">Tính tiền điện</a></li>
+                <li><a href="../exercise/form/B2_Pheptinh.php">Tính toán 2 số</a></li>
+                <li><a href="../exercise/form/B3_Dientichhcn.php">Diện tích hình chữ nhật</a></li>
             </ul>
         </li>
         <li>
@@ -59,15 +57,17 @@
         </li>
         <li><a href="#">Bài tập OOP</a>
             <ul class="second-level-menu">
+            <li><a href="../exercise/oop/B1_Caclopdongian.php">Các lớp đơn giản</a></li>
                 <li><a href="../exercise/oop/B2_QuanlyNV.php">Quản lí nhân viên</a></li>
                 <li><a href="../exercise/oop/B4_Chuvi.php">Tính chu vi</a></li>
+                <li><a href="../exercise/oop/B3_Phanso.php">Tính toán 2 phân số</a></li>
             </ul>
         </li>
-        <li><a href="#">Bài tập File</a></li>
+        <li><a href="../exercise/gui_mail/gui_mail.php">Bài tập gửi Mail</a></li>
     </ul>
 
     <center>
-        <img src="../images/bg.jpg" width="750px" alt="">
+        <img src="../images/bg.jpg" width="1024px" alt="">
     </center>
 
     <?php include('../includes/html/footer.html'); ?>

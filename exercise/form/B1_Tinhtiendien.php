@@ -8,7 +8,7 @@
 
     <title>Tính tiền điện</title>
 
-    <link rel="stylesheet" href="/includes/style.css">
+    <link rel="stylesheet" href="/includes/css/style_page.css">
     
     <style>
         td {
@@ -26,7 +26,7 @@
 
 <body>
 
-    <?php include('../../includes/header2.html') ?>
+    <?php include('../../includes/html/header2.html') ?>
 
     <?php
     if (isset($_POST['csmoi']))
@@ -100,7 +100,7 @@
                 </tr>
                 <tr>
                    
-                    <td><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
+                    <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
                     <td><input type="submit" value="   Tính   " name="tinh" /></td>
                 </tr>
             </table>
@@ -108,7 +108,7 @@
     </center>
 
 
-    <?php include('../../includes/footer.html') ?>
+    <?php include('../../includes/html/footer.html') ?>
 </body>
 
 

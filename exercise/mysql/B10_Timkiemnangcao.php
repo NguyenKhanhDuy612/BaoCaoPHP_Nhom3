@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tìm kiếm sữa nâng cao</title>
-    <link rel="stylesheet" href="/includes/style.css">
+    <link rel="stylesheet" href="/includes/css/style_page.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
             width: 50px;
         }
     </style>
-<?php include('../../includes/header2.html') ?>
+<?php include('../../includes/html/header2.html') ?>
     <?php
     $conn = mysqli_connect('localhost', 'root', '', 'qlbansua')
         or die('Could not connect to MySQL: ' . mysqli_connect_error());
@@ -104,7 +104,7 @@
                     echo "</td>";
                     }
                  }
-                 echo "<tr><td><a href='/exercise.php'><input type='button'value='Trở về'></a></td></tr>";
+                 echo "<tr><td><a href='/website/exercise.php'><input type='button'value='Trở về'></a></td></tr>";
                 echo"</table>";
 
 
@@ -112,6 +112,6 @@
         }
     ?>
 
-<?php include('../../includes/footer.html') ?>
+<?php include('../../includes/html/footer.html') ?>
 </body>
 </html>

@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý nhân viên</title>
-    <link rel="stylesheet" href="/includes/style.css">
+    <link rel="stylesheet" href="/includes/css/style_page.css">
 
 </head>
 
 <body>
-    <?php include('../../includes/header2.html') ?>
+    <?php include('../../includes/html/header2.html') ?>
     <script>
         function show(x) {
             if (x == "0") {
@@ -435,7 +435,7 @@
                 <td></td>
                 <td class="form2">Thực lĩnh</td>
                 <td><input type="text" name="thuclinh" id="" readonly="true" value="<?php if (isset($_POST["thuclinh"])) echo $thuclinh ?>"></td>
-                <td align="right"><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
+                <td align="right"><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
             </tr>
         </table>
 
@@ -445,7 +445,7 @@
 
         </table>
     </form>
-    <?php include('../../includes/footer.html') ?>
+    <?php include('../../includes/html/footer.html') ?>
 </body>
 
 </html>

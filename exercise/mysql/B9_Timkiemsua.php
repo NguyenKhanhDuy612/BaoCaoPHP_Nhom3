@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Tìm kiếm thông tin sữa</title>
-    <link rel="stylesheet" href="/includes/style.css">
+    <link rel="stylesheet" href="/includes/css/style_page.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
             width: 50px;
         }
     </style>
-    <?php include('../../includes/header2.html') ?>
+    <?php include('../../includes/html/header2.html') ?>
 
     <center>
         <h2>TÌM KIẾM THÔNG TIN SỮA</h2>
@@ -71,7 +71,7 @@
         }else{
             echo "<center >Không tìm thấy sản phẩm nào !</center>";
         }
-        echo "<tr><td><a href='/exercise.php'><input type='button'value='Trở về'></a></td></tr>";
+        echo "<tr><td><a href='/website/exercise.php'><input type='button'value='Trở về'></a></td></tr>";
 
         echo "</table>";
 
@@ -82,7 +82,7 @@
     ?>
 
 
-<?php include('../../includes/footer.html') ?>
+<?php include('../../includes/html/footer.html') ?>
 
 
 </body>

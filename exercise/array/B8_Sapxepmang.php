@@ -6,16 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sắp xếp mảng</title>
+    <link rel="stylesheet" href="../../includes/css/style_page.css">
+
 </head>
 
 <body>
+<?php include('../../includes/html/header2.html') ?>
     <!-- ======================================================== -->
 
-    <?php # Script 9.5 - register.php #2
-// This script performs an INSERT query to add a record to the users table.
-
-$page_title = 'Register';
-include('../includes/header.html'); ?>
+    <style type="text/css">
+        td {
+            width: 385px;
+        }
+        table{
+            margin: 0 auto;
+        }
+    </style>
     <?php
 
     function doivitri(&$a, &$b)
@@ -75,22 +81,7 @@ include('../includes/header.html'); ?>
     }
     ?>
 
-    <!-- ============================================================ -->
-    <style type="text/css">
-        table {
-            text-transform: uppercase;
-            color: black;
-            font-weight: 800;
-            background-color: gray;
-        }
-
-        table th {
-            background-color: blue;
-            font-style: vni-times;
-            color: cyan;
-
-        }
-    </style>
+  
     <!-- ======================================================== -->
 
     <form action="" method="post">
@@ -102,7 +93,7 @@ include('../includes/header.html'); ?>
             </th>
             <tr>
                 <td>Nhập mảng:</td>
-                <td><input type="text" name="mang" size="70" value="<?php echo $str; ?> " /></td>
+                <td><input type="text" name="mang" size="50" value="<?php echo $str; ?> " /></td>
             </tr>
 
             <tr>
@@ -111,20 +102,22 @@ include('../includes/header.html'); ?>
             </tr>
             <tr>
                 <td>Mảng tăng dần: </td>
-                <td><input type="text" name="mtd" size="70" disabled="disabled" value="<?php echo $mtd; ?> " /></td>
+                <td><input type="text" name="mtd" size="50" disabled="disabled" value="<?php echo $mtd; ?> " /></td>
             </tr>
             <tr>
                 <td>Mảng giảm dần: </td>
-                <td><input type="text" name="mgd" size="70" disabled="disabled" value="<?php echo $mgd; ?> " /></td>
+                <td><input type="text" name="mgd" size="50" disabled="disabled" value="<?php echo $mgd; ?> " /></td>
             </tr>
 
             <tr>
+            <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
                 <td colspan="2" align="center"><label>(Các phần tử trong mảng sẽ cách nhau bằng dấu ",")</label></td>
             </tr>
 
         </table>
 
     </form>
+    <?php include('../../includes/html/footer.html') ?>
 </body>
 
 </html>

@@ -38,7 +38,7 @@
 
         while (($rows = mysqli_fetch_row($result))) {
             $rows[4] = number_format($rows[4], 0, ',', '.') . " VNĐ";
-          echo $n;
+          
             if ($n < 10) {
                 echo  "<td width='400px' align='center'>
                             <p> <b>$rows[0]</b> </p>

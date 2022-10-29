@@ -1,96 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma trận số nguyên</title>
-    <link rel="stylesheet" href="/includes/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tạo và hiển thị ma trận số nguyên</title>
+    <link rel="stylesheet" href="../../includes/css/style_page.css">
 </head>
-
 <body>
 
-<?php include('../../includes/header2.html') ?>
+<?php include('../../includes/html/header2.html') ?>
+	<?php 
+		
+		if(!isset($_POST['xl'])){
+			$loid = " ";
+			$loic = " ";
+			$sd = " ";
+			$sc = "";
+			$ketqua = "";
+		}
+		if(isset($_POST['xl'])){
+			$sd  = $_POST['sd'];
+			$sc = $_POST['sc'];
+			if ($sd < 2 || $sd >5 || $sc <2 || $sc >5){
+				if ($sd < 2 || $sd >5) {
+					$loid = "Số dòng phải bé hơn 6 và lớn hơn 1.";
+				}
+				elseif($sc <2 || $sc >5){
+					$loic = "Số cột phải bé hơn 6 và lớn hơn 1.";
+				}
+			}
+			else{
+				// sinh mang 
 
-    <?php
-    // Kiểm soát giá trị nhập vào
-    if (isset($_POST['sodong']))
-        $sodong = trim($_POST['sodong']);
-    else $sodong = 0;
-    if (isset($_POST['socot']))
-        $socot = trim($_POST['socot']);
-    else $socot = 0;
-    if (isset($_POST['kq']))
-        $kq = trim($_POST['kq']);
-    else $kq = "";
+				$kq = "";
+				for ($i=0; $i < $sd ; $i++) { 
+					for ($j=0; $j < $sc; $j++) { 
+						$mang[$i][$j] = rand(-1000, 1000);
+					}
+				}
 
+				for ($i=0; $i < $sd ; $i++) { 
+					for ($j=0; $j < $sc; $j++) { 
+						$kq .= $mang[$i][$j]." ";
+					}
+					$kq .= "\n";
+				}
 
-    if (isset($_POST['thuchien'])) {
-        if ((is_numeric($sodong) && is_numeric($socot))) {
-            if ($sodong >= 2 && $sodong <= 5) {
-                if ($socot >= 2 && $socot <= 5) {
-                    // tạo giá trị cho các pt mảng
-                    $arr = array(array());
-                    $tmp = "";
-                    for ($i = 0; $i < $sodong; $i++) {
-                        for ($j = 0; $j < $socot; $j++) {
-                            $x = rand(1, 9);
-                            $arr[$i][$j] = $x;
-                        }
-                    }
-                    // in ra mảng vừa tạo
-                    for ($i = 0; $i < $sodong; $i++) {
-                        for ($j = 0; $j < $socot; $j++) {
-                            //echo ($arr[$i][$j] . " ");
-                            $tmp .= ($arr[$i][$j] . " ");
-                        }
+				// dong chan cot le
+				$dccl = "";
+				for ($i=0; $i < $sd ; $i++) { 
+					for ($j=0; $j < $sc; $j++) {
+						if ($i % 2 == 0 && $j % 2 == 1) {
+							$dccl .= $mang[$i][$j]." ";
+						}
+					}
+				}
 
-                        // $a.="<br/>";
-                        $tmp .= "\n";
-                    }
-                    $kq = "Ma trận được tạo là : \n" . $tmp;
-                } else echo "Số cột trong khoảng [2-5] !";
-            } else echo "Số dòng trong khoảng [2-5] !";
-        } else {
-            echo "Vui lòng nhập số!";
-        }
-    }
-    ?>
+				$tongbs = 0;
+				for ($i=0; $i < $sd ; $i++) { 
+					for ($j=0; $j < $sc; $j++) {
+						if ($mang[$i][$j] % 10 == 0) {
+							$tongbs += $mang[$i][$j];
+						}
+					}
+				}
+			}
+			
+			$ketqua = "Sinh mảng hai chiều:\n\n$kq
+			\nPhần tử ở dòng chẳn cột lẻ: \n$dccl
+			\nTổng các phần tử là bội số của 10: $tongbs>";
 
+		}
 
+	?>
 
-    <!-- ========================= -->
-    <center>
-    <form action="" method="post">
-        <table>
+	<form action="" method="post">
+		<table style="margin: auto;" bgcolor="thistle" width="1025px">
+			<tr bgcolor="cyan">
+				<td colspan="2" align="center"> <h2>THAO TÁC TRÊN MẢNG HAI CHIỀU</h2> </td>
+			</tr>
+			<tr bgcolor="cyan">
+				<td>Nhập số dòng: </td>
+				<td><input type="text" name="sd" value="<?php echo $sd?>"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><text style="color: red"><?php if($sd < 2 || $sd >5) echo $loid;?></text></td>
+			</tr>
+			<tr bgcolor="cyan">
+				<td>Nhập số cột: </td>
+				<td><input type="text" name="sc" value="<?php echo $sc?>"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><text style="color: red"><?php if($sc < 2 || $sc >5) echo $loic;?></text></td>
+			</tr>
+			
+			<tr>
+				<td colspan="2" align="center">
+					<textarea cols="20" rows="10" name="kq" style="width: 341px; height: 148px;"> 
+						<?php echo $ketqua;?>
+					</textarea>
+				</td>
+			</tr>
             <tr>
-                <td style="font-size:20px;text-align:center;">Số dòng</td>
-            </tr>
-            <tr>
-                <td><input type="text" name="sodong" style="font-size:20px;text-align:center;" value="<?php if (isset($_POST['sodong'])) echo $_POST['sodong']; ?>"></td>
-            </tr>
-            <tr>
-            <td style="font-size:20px;text-align:center;">Số cột</td>
-            </tr>
-            <tr>
-                <td><input type="text" name="socot" style="font-size:20px;text-align:center;"  value="<?php if (isset($_POST['socot'])) echo $_POST['socot']; ?>"></td>
-            </tr>
-            <tr></tr>
-        
-            <td style="font-size:20px;text-align:center;">Kết quả</td>
-            <tr>
-                <td><textarea name="kq" id="" cols="23" rows="10" readonly="true" style="resize: none; font-size:20px;text-align:center;"><?php echo $kq  ?></textarea></td>
-            </tr>
-            <tr>
-                <td style="text-align:left"><input type="submit" name="thuchien" value="Thực hiện"></td>
-                <td ><a  href="/exercise.php"><input type="button" value="Trở về"></a></td>
-            </tr>
+            <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
+				<td><input type="submit" name="xl" value="Xử lý" style="background: cyan"></td>
+                
+			</tr>
           
-        </table>
-    </form>
-    </center>
-    <?php include('../../includes/footer.html') ?>
+		</table>
+	</form>
+    <?php include('../../includes/html/footer.html') ?>
 </body>
-
 </html>

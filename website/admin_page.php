@@ -15,7 +15,7 @@
 	include('../includes/html/header.html');
 	?>
 	<center>
-		<img src="../images/bg.jpg" width="750px" alt="">
+		<img src="../images/bg.jpg" width="1024px" alt="">
 	</center>
 
 	<?php

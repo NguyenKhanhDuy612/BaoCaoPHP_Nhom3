@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thay thế phần tử mảng</title>
-    <link rel="stylesheet" href="/includes/style.css">
+    <link rel="stylesheet" href="/includes/css/style_page.css">
     
 </head>
 
 <body>
-<?php include('../../includes/header2.html') ?>
+<?php include('../../includes/html/header2.html') ?>
     <?php
     function timKiem($arr, $gtc)
     {
@@ -108,13 +108,13 @@
                 <td colspan="2" align="center"><label>(Các phần tử trong mảng sẽ cách nhau bằng dấu ",")</label></td>
             </tr>
            <tr>
-           <td><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
+           <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
            </tr>
         </table>
 
     </form>
     </center>
-    <?php include('../../includes/footer.html') ?>
+    <?php include('../../includes/html/footer.html') ?>
 </body>
 
 </html>
