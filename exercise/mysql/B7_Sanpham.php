@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B7_Thông tin sữa</title>
+    <title>Thông tin sữa</title>
+    <link rel="stylesheet" href="/includes/css/style_page.css">
 </head>
 <body>
     
 </body>
 </html>
 <body>
-
+<style>
+        table{
+            margin: 0 auto;
+        }
+        td{
+            width: 50px;
+        }
+    </style>
+<?php include('../../includes/html/header2.html') ?>
     <?php
     // Ket noi CSDL
     //require("connect.php");
@@ -28,7 +37,7 @@
 
     $result = mysqli_query($conn, 'SELECT sua.Ten_sua, hang_sua.Ten_hang_sua, loai_sua.Ten_loai, sua.Trong_luong, sua.Don_gia, sua.hinh, sua.ma_sua FROM sua, hang_sua,loai_sua
     WHERE sua.Ma_loai_sua = loai_sua.Ma_loai_sua and sua.Ma_hang_sua = hang_sua.Ma_hang_sua LIMIT ' . $offset . ', ' . $rowsPerPage);
-    echo "<p align='center'><font face= 'Verdana, Geneva, sans-serif' size='5'> Danh sách sản phẩm</font></P>";
+    // echo "<p align='center'><font face= 'Verdana, Geneva, sans-serif' size='5'> Danh sách sản phẩm</font></P>";
 
     // <form action="" method="post"></form>
      echo "<table align='center' width='1300' border='1' cellpadding='2'  cellspacing='2' style='border-collapse:collapse' >";
@@ -78,7 +87,7 @@
     // echo 'Tong so trang la: ' . $maxPage;
 
     ?>
-
+<?php include('../../includes/html/footer.html') ?>
 </body>
 
 </html>

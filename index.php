@@ -18,7 +18,11 @@ if (isset($_POST['submit'])) {
       while ($rows = mysqli_fetch_row($result)) {
          if ($rows[4] == 'Quản Lý' || $rows[4] == 'Quản trị viên') {
             $_SESSION['tenQuanTriVien'] = $rows[1];
-            header('location: website/admin_page.php');
+
+            // header('location:./code/xu_ly_san_pham/index_qlsp.php');
+
+            header('location: exercise/xu_ly_san_pham/index_qlsp.php');
+
          } elseif ($rows[4] == 'Nhân Viên') {
             $_SESSION['tenNguoiDung'] = $rows[1];
             header('location: user_page.php');

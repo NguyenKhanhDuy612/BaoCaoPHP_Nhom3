@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <title>Tính chu vi và diện tích</title>
-    <link rel="stylesheet" href="/includes/style.css">
+    <link rel="stylesheet" href="/includes/css/style_page.css">
 
     <style>
        
@@ -23,7 +23,7 @@
 
 <body>
 
-<?php include('../../includes/header2.html') ?>
+<?php include('../../includes/html/header2.html') ?>
     <?php
 
     abstract class Hinh
@@ -172,13 +172,13 @@
                     <td><textarea name="ketqua" cols="50" rows="4" disabled="disabled"><?php echo $str; ?></textarea></td>
                 </tr>
                 <tr>
-                <td><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
+                <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
                     <td ><input type="submit" name="tinh" value="TÍNH" /></td>
                 </tr>
             </table>
         <!-- </fieldset> -->
     </form>
-    <?php include('../../includes/footer.html') ?>
+    <?php include('../../includes/html/footer.html') ?>
 </body>
 
 </html>

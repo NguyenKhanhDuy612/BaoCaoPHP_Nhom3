@@ -59,7 +59,7 @@
 
     if (isset($_POST['so'])) {
 
-        $so = $_POST['so'];
+        $so = trim($_POST['so']);
     }
 
     if (isset($_POST['so']) && isset($_POST['tinh'])) {

@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Các lớp đơn giản</title>
-    <link rel="stylesheet" href="../Web_Template/includes/style.css">
+    <link rel="stylesheet" href="/includes/css/style_page.css">
    
 </head>
 
-<?php include ('../Web_Template/includes/header.html'); ?>
+<?php include('../../includes/html/header2.html') ?>
 <script>
     window.onload = function() {
         document.getElementById("svzone").style.display = "none";
@@ -192,7 +192,7 @@
     <!-- ===================================================== -->
 
     <form action="" method="post">
-        <table border="1" cellpadding="0" cellspacing="0" style="font-size:14px;margin:0 auto;" class="content">
+        <table border="1" width="1024px" cellpadding="0" cellspacing="0" style="font-size:14px;margin:0 auto;" class="content">
             <tr>
                 <td>
                     <table cellpadding="2" cellspacing="10">
@@ -281,19 +281,21 @@
                 </td>
             </tr>
             <tr>
+            <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
                 <td><input type="submit" name="hthi" size="20" value="   Xử lí  " /></td>
+               
             </tr>
 
         </table>
         </td>
         </tr>
-        <td><textarea cols="55" rows="6" name="ketqua" readonly="true" style="resize: none;"><?php echo $ketqua ?> </textarea></td>
+        <td><textarea cols="55" rows="6" name="ketqua" readonly="true" style="resize: none;font-size:18px"><?php echo $ketqua ?> </textarea></td>
 
         </table>
     </form>
 
   
-    <?php include ('../Web_Template/includes/footer.html'); ?>
+    <?php include('../../includes/html/footer.html') ?>
 </body>
 
 </html>

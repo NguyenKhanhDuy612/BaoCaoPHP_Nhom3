@@ -43,6 +43,11 @@
     }
     ?>
 
+<style type="text/css">
+        td {
+            width: 385px;
+        }
+    </style>
 
     <center>
         <form action="" method="post">
@@ -50,7 +55,7 @@
             <table border="0" cellpadding="0">
 
                 <th colspan="2">
-                    <h2 style="color:red ;">TÍNH TỔNG DÃY SỐ</h2>
+                    <h2>TÍNH TỔNG DÃY SỐ</h2>
                 </th>
 
                 <tr>
@@ -60,20 +65,20 @@
 
                 <tr>
                     <td>Mảng:</td>
-                    <td><input type="text" name="mang_kq" size="50" disabled="disabled" value="<?php echo $str_kq; ?> " /></td>
+                    <td><input type="text" name="mang_kq" size="40" disabled="disabled" value="<?php echo $str_kq; ?> " /></td>
                 </tr>
                 <td>Kết quả </td>
                 <td><input type="text" name="kq" size="10" disabled="disabled" value="<?php echo $ketqua; ?> " /></td>
 
                 </tr>
                 <tr>
-                    <td colspan="2" align="center"><label>(Các phần tử trong mảng sẽ cách nhau bằng dấu ",")</label></td>
+                    <td ><label>(Các phần tử trong mảng sẽ cách nhau bằng dấu ",")</label></td>
                 </tr>
                 <tr>
 
-                    <td></td>
+                <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
                     <td><input type="submit" name="tinh" size="20" value="Tính" /></td>
-                    <td><a href="../../website/exercise.php">Trở về</a></td>
+                    
                 </tr>
             </table>
 

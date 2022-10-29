@@ -136,7 +136,7 @@
                                     <td><span>61133540</span></td>
                                 </tr>
 
-                                <tr>
+                                <tr>    
                                     <td>Ngày sinh: </td>
                                     <td><span>06-06-2001</span></td>
                                 </tr>
