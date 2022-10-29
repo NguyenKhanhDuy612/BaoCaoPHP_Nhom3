@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
       while ($rows = mysqli_fetch_row($result)) {
          if ($rows[4] == 'Quản Lý' || $rows[4] == 'Quản trị viên') {
             $_SESSION['tenQuanTriVien'] = $rows[1];
-            header('location:admin_page.php');
+            header('location: website/admin_page.php');
          } elseif ($rows[4] == 'Nhân Viên') {
             $_SESSION['tenNguoiDung'] = $rows[1];
             header('location: user_page.php');
@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
    <title>Đăng nhập tài khoản</title>
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="./includes/style2.css">
+   <link rel="stylesheet" href="./includes/css/style_page2.css">
 
 </head>
 
@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
          <input type="text" name="tenDN" required placeholder="Nhập tên đăng nhập">
          <input type="password" name="mk" required placeholder="Nhập mật khẩu">
          <input type="submit" name="submit" value="Đăng nhập" class="form-btn">
-         <p>Bạn chưa có tài khoản? <a href="register_form.php">Đăng ký ngay</a></p>
+         <p>Bạn chưa có tài khoản? <a href="./website/register_form.php">Đăng ký ngay</a></p>
       </form>
 
    </div>
