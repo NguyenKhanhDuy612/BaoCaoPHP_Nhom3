@@ -1,16 +1,22 @@
 <?php
 
-include('../../includes/header2.html');
+include('../../includes/html/header2.html');
 ?>
+<link rel="stylesheet" href="../../includes/css/style_page.css">
+<style>
+    .form_mail {
+        margin: 0 150px;
+    }
+</style>
 <script src="./ckeditor/ckeditor.js"></script>
 
-<div>
+<div class="form_mail">
 
-    <div>
+    <div style="align-items: center;">
         <form action="./sendmail_PHP_Mailer.php" method="POST">
             <div style="margin-bottom: 12px;">
                 <label>Email nhận: </label>
-                <input type="email" name="nguoi_nhan" style="width: 250px;" required>
+                <input type="email" name="toMail" style="width: 250px;" required>
             </div>
             <textarea name="content-mail" required>
 
@@ -28,5 +34,5 @@ include('../../includes/header2.html');
 </script>
 
 <?php
-include('../../includes/footer.html');
+include('../../includes/html/footer.html');
 ?>
