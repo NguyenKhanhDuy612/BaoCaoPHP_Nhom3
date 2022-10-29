@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thành viên nhóm</title>
+    <link rel="stylesheet" href="../includes/css/style_page.css">
 </head>
 
 <body>
@@ -13,7 +14,7 @@
         #dstv {
             /* background-color: cyan; */
             width: 100%;
-            margin:  0 auto;
+            margin: 0 auto;
             font-size: 18px;
             /* font-weight: 600; */
         }
@@ -38,12 +39,12 @@
             padding-bottom: 10px;
         }
     </style>
-    <?php include('includes/header.html'); ?>
+    <?php include('../includes/html/header.html'); ?>
     <div id="dstv">
 
         <div class="content">
             <div class="EmpImg">
-                <img src="./images/suu.jpg" alt="Alternate Text" />
+                <img src="../images/suu.jpg" alt="Alternate Text" />
             </div>
 
             <div style="padding: 50px">
@@ -71,7 +72,7 @@
                                     <td><span>61.CNTT-1</span></td>
                                 </tr>
 
-                        
+
                             </table>
                         </fieldset>
 
@@ -79,10 +80,10 @@
                 </div>
             </div>
         </div>
-      
+
         <div class="content">
             <div class="EmpImg">
-                <img src="./images/thin.jpg" alt="Alternate Text" />
+                <img src="../images/thin.jpg" alt="Alternate Text" />
             </div>
 
             <div style="padding: 50px">
@@ -121,7 +122,7 @@
 
         <div class="content">
             <div class="EmpImg">
-                <img src="./images/hoi.jpg" alt="Alternate Text" />
+                <img src="../images/hoi.jpg" alt="Alternate Text" />
             </div>
 
             <div style="padding: 50px">
@@ -161,7 +162,7 @@
 
     </div>
 
-    <?php include('includes/footer.html'); ?>
+    <?php include('../includes/html/footer.html'); ?>
 </body>
 
 </html>
