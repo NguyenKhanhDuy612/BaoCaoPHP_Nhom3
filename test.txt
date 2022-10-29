@@ -8,3 +8,5 @@ nháp ngày 25 tháng 10
 
 tao thêm nội dung mới 27 10
 
+đang ở git duy_27 và push lên
+

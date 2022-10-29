@@ -2,10 +2,20 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>B8_Thông tin chi tiết sữa</title>
+    <title>Thông tin chi tiết sữa</title>
+    <link rel="stylesheet" href="/includes/style.css">
 </head>
-<body>
 
+<body>
+<style>
+        table{
+            margin: 0 auto;
+        }
+        td{
+            width: 50px;
+        }
+    </style>
+<?php include('../../includes/header2.html') ?>
     <?php
     // Ket noi CSDL
     //require("connect.php");
@@ -23,26 +33,28 @@
     WHERE sua.Ma_loai_sua = loai_sua.Ma_loai_sua and sua.Ma_hang_sua = hang_sua.Ma_hang_sua LIMIT ' . $offset . ', ' . $rowsPerPage);
    
     // $bg = "#eee";
-    echo  "<p align='center'><font face= 'Verdana, Geneva, sans-serif' size='5'>Chi tiết sản phẩm</font></p>";
+        // echo  "<p align='center'><font face= 'Verdana, Geneva, sans-serif' size='5'>Chi tiết sản phẩm</font></p>";
     if (mysqli_num_rows($result) <> 0) {
         while ($rows = mysqli_fetch_row($result)) {
             $rows[5] = number_format($rows[5],0,',','.')." VNĐ";
             echo
                
-                "<table align='center' width='700' border='1' cellpadding='2' cellspacing='2' style='border-collapse:collapse'>
+                "<table align='center' width='1025' border='1' cellpadding='2' cellspacing='2' style='border-collapse:collapse'>
                 <td align='center' colspan='2' style='color:red;'>$rows[1]-$rows[10]</td>
                 <tr >
                 <td align='center'>  <img width='200px' height='200px' src='./anh/$rows[8]' /></td>
-                <td> 
+                <td style='width:290px'> 
                     <p> <b>Thành phần dinh dưỡng:</b> <br> $rows[6]</p>
                     <p> <b>Lợi ích:</b> <br> $rows[7]</p>
                     <p align='right'><i><b>Trọng lượng:</b> $rows[4] gram - <b>Đơn giá:</b>  $rows[5]</i></p> 
                 </td>
-                </tr>";
+                </tr>"
+             
+                ;
            
         }
     }
-   
+    echo "<td><a href='/exercise.php'><input type='button'value='Trở về'></a></td>";
         echo "</table>";
 
 
@@ -68,7 +80,7 @@
     ?>
 
 
-
+<?php include('../../includes/footer.html') ?>
 </body>
 
 </html>

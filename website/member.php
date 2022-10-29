@@ -55,16 +55,16 @@
                             <table>
                                 <tr>
                                     <td>Mã số sinh viên: </td>
-                                    <td><span>61134311</span></td>
+                                    <td><span>61133202</span></td>
                                 </tr>
 
                                 <tr>
                                     <td>Ngày sinh: </td>
-                                    <td><span>06-06-2001</span></td>
+                                    <td><span>02/09/2001</span></td>
                                 </tr>
                                 <tr>
                                     <td>Email: </td>
-                                    <td><span>tam.nlt.61cntt@ntu.edu.vn</span></td>
+                                    <td><span>tri.nm.61cntt@ntu.edu.vn</span></td>
                                 </tr>
 
                                 <tr>
@@ -133,7 +133,7 @@
                             <table>
                                 <tr>
                                     <td>Mã số sinh viên: </td>
-                                    <td><span>61134311</span></td>
+                                    <td><span>61133540</span></td>
                                 </tr>
 
                                 <tr>
@@ -142,7 +142,7 @@
                                 </tr>
                                 <tr>
                                     <td>Email: </td>
-                                    <td><span>tam.nlt.61cntt@ntu.edu.vn</span></td>
+                                    <td><span>duy.nk.61cntt@ntu.edu.vn</span></td>
                                 </tr>
 
                                 <tr>

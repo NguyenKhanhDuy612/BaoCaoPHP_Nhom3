@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài 3 - Phép tính trên phân số</title>
+    <link rel="stylesheet" href="/includes/style.css">
     <style>
 
         fieldset {
@@ -21,17 +22,17 @@
             padding: 5px 10px;
 
         }
-        input {
-
-            margin: 5px;
-
+        table{
+            margin: 0 auto;
         }
-        
+        table td {
+    padding-left: 72px;
+}
     </style>
 
 </head>
 <body>
-
+<?php include('../../includes/header2.html') ?>
 <?php
 
         class PhepToan  
@@ -176,11 +177,11 @@ $str=NULL;
 
 <form action="" method="post">
 
-<fieldset>
-
-	<h1>Chọn các phép tính trên phân số</h1>
 
 	<table border='0'>
+        <th colspan="4">
+            <h2>TÍNH TOÁN 2 PHÂN SỐ</h2>
+        </th>
 		<tr>
             <td>Nhập phân số thứ 1: </td>
             <td>
@@ -255,13 +256,16 @@ $str=NULL;
             </td>
         </tr>
         <tr>
+        <td><a href="/exercise.php"><input type="button" value="Trở về"></a></td>
 			<td colspan="3"> <?php echo $str;?></td>
 			<!-- <td >Phép cộng là: </td> -->
 		</tr>
 	</table>
 
-</fieldset>
+
 
 </form>
+
+<?php include('../../includes/footer.html') ?>
 </body>
 </html>

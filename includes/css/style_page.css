@@ -33,6 +33,7 @@ body {
 	height:80px;
 	margin:0 auto;
 	width:751px;
+	padding:10px;
 	width:1006px;
 	background-color: cyan;
 }
@@ -57,7 +58,7 @@ body {
 	border-right:1px solid #999;
 	margin:10px auto;
 	/* width:750px; */
-	width:1006px;
+	width:1024px;
 	height:40px;
 	list-style:none;
 }
@@ -99,7 +100,7 @@ body {
 	height:auto;
 	margin:0 auto;
 	padding:0 0 20px;
-	width:751px;
+	width:1025px;
 }
 #content h1 {
 	border-bottom:1px dashed #999;
@@ -157,9 +158,9 @@ input, select, .input {
 .third-level-menu > li
 {
     height: 30px;
-    background: #999999;
+    background: cyan;
 }
-.third-level-menu > li:hover { background: #CCCCCC; }
+.third-level-menu > li:hover { background: #fafafa; }
 
 .second-level-menu
 {
@@ -178,15 +179,16 @@ input, select, .input {
 {
     position: relative;
     height: 30px;
-    background: #999999;
+    background: cyan;;
 }
-.second-level-menu > li:hover { background: #CCCCCC; }
+.second-level-menu > li:hover { background: #fafafa; }
 
 .top-level-menu
 {
     list-style: none;
     padding: 0;
     margin: 0;
+	/* color: black; */
 }
 
 .top-level-menu > li
@@ -194,10 +196,11 @@ input, select, .input {
     position: relative;
     float: left;
     height: 30px;
-    width: 150px;
-    background: #999999;
+    width: 205px;
+    background: cyan;
+	/* color: #000000; */
 }
-.top-level-menu > li:hover { background: #CCCCCC; }
+.top-level-menu > li:hover { background: #fafafa; }
 
 .top-level-menu li:hover > ul
 {
@@ -212,10 +215,11 @@ input, select, .input {
 {
     /* font: bold 14px Arial, Helvetica, sans-serif; */
 	font:16px Courier , 	Helvetica, "bitstream vera sans", sans-serif;
-    color: #FFFFFF;
+    color: black;
     text-decoration: none;
     padding: 0 0 0 10px;
-
+	text-align: center;
+	font-weight: 900;
     /* Make the link cover the entire list item-container */
     display: block;
     line-height: 30px;
@@ -223,6 +227,24 @@ input, select, .input {
 .top-level-menu a:hover { color: #000000; }
 
 
-form{
-	margin-top: 50px;
+/* form{
+	margin-top: 30px;
+} */
+/* css bài tìm kiếm */
+table{
+	color: black;
+	font-weight: 900;;
+	background-color: #fafafafa;
+	font-size: 18px;     
 }
+table th{
+	background-color: cyan;
+	font-style: vni-times;
+	color: black;
+}
+table td{
+	padding-left: 43px;
+}
+/* td {
+	width: 385px;
+} */
