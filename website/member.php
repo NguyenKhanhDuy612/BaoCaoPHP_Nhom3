@@ -138,7 +138,7 @@
 
                                 <tr>    
                                     <td>Ngày sinh: </td>
-                                    <td><span>06-06-2001</span></td>
+                                    <td><span>20-08-2001</span></td>
                                 </tr>
                                 <tr>
                                     <td>Email: </td>
