@@ -102,15 +102,15 @@
 }
 
 .form-container form .form-btn{
-   background: #fbd0d9;
-   color:crimson;
+   background: #ffd130;
+   color:black;
    text-transform: capitalize;
    font-size: 20px;
    cursor: pointer;
 }
 
 .form-container form .form-btn:hover{
-   background: crimson;
+   background: #ffd130;
    color:#fff;
 }
 
@@ -121,7 +121,7 @@
 }
 
 .form-container form p a{
-   color:crimson;
+   color:#ffd130;
 }
 
 .form-container form .error-msg{
