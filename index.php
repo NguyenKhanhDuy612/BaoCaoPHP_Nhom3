@@ -20,16 +20,20 @@ if(isset($_POST['submit'])){
             $_SESSION['tenQuanTriVien'] = $rows[1];
             header('location:/website2/admin.php');
          }
-         elseif($rows[0] == 'Nhân Viên'){
-            $_SESSION['tenNguoiDung'] = $rows[1];
-            header('location:website2/home.php');
+         // elseif($rows[0] == 'Nhân Viên'){
+         //    $_SESSION['tenNguoiDung'] = $rows[1];
+         //    header('location:website2/home.php');
+         // }
+         else
+         {
+            $error[] = 'Bạn không phải quản trị viên!';
          }
       }
    }
    elseif(mysqli_num_rows($custormerResult) <> 0)
    {
       while($rows=mysqli_fetch_row($custormerResult)){
-         $_SESSION['tenQuanTriVien'] = $rows[1];
+         $_SESSION['tenNguoiDung'] = $rows[1];
          header('location:website2/home.php');
       }
    }
@@ -46,9 +50,10 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Đăng nhập tài khoản</title>
+   <title>Đăng nhập</title>
 
-   <link rel="stylesheet" href="./includes/css/style_page2.css">
+
+   <link rel="stylesheet" href="./website2/css/style2.css">
 
 </head>
 <body>
@@ -67,7 +72,7 @@ if(isset($_POST['submit'])){
       <input type="text" name="tenDN" required placeholder="Tên đăng nhập">
       <input type="password" name="mk" required placeholder="Mật khẩu">
       <input type="submit" name="submit" value="Đăng nhập" class="form-btn">
-      <p>Bạn chưa có tài khoản? <a href="./website/register_form.php">Đăng ký ngay</a></p>
+      <p>Bạn chưa có tài khoản? <a href="./website2/register.php">Đăng ký ngay</a></p>
    </form>
 
 </div>

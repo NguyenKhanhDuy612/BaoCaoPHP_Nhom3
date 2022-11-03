@@ -38,14 +38,9 @@
     $result = mysqli_query($abc, $sql);
     $result2 = mysqli_query($abc, $sql2);
     
-
-
-
     ?>
     <?php include('./include/header.php');?>
    
-
-
     <!-- Carousel Start -->
     <div class="container-fluid mb-3">
         <div class="row px-xl-5">
@@ -155,7 +150,7 @@
                     </div>
                 </div>
                 <div class='text-center py-4'>
-                    <a class='h6 text-decoration-none text-truncate' href='detail.php?id=$rows[3]'>$rows[0]</a>
+                    <a class='h6 text-decoration-none text-truncate' href='detailproduct.php?id=$rows[3]'>$rows[0]</a>
                     <div class='d-flex align-items-center justify-content-center mt-2'>
                         <h5>$rows[1]</h5><h6 class='text-muted ml-2'><del>$dc1</del></h6>
                     </div>
@@ -198,10 +193,7 @@
     </div>
     <!-- Categories End -->
 
-
    <?php include('../website2/include/footer.html'); ?>
-   
-
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>

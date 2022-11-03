@@ -6,9 +6,6 @@
 	<title>Xóa Sản Phẩm</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
-
-	<!--  -->
 </head>
 
 <body>
@@ -21,7 +18,6 @@
 		$sql = "DELETE FROM sanpham WHERE MASP='$id'";
 		if ($abc->query($sql) === TRUE) {
 			echo "<center ><h5 >Xoá thành công!</h5></center>";
-			// include('index_qlsp.php');
 		} else {
 			echo "Error updating record: " . $abc->error;
 		}

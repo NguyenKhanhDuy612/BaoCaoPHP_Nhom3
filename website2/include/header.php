@@ -1,12 +1,16 @@
 
 <?php 
 session_start();
-$recent = "Nguyễn Nhật Minh";
+$recent = "";
 
-if(isset($_SESSION['tenNguoiDung'])){
+if(isset($_SESSION['tenNguoiDung'])){ //sua mo nay
     $recent = $_SESSION['tenNguoiDung'];
-}else 
-header('location:index.php'); 
+}
+elseif(isset($_SESSION['tenQuanTriVien'])){
+    $recent = $_SESSION['tenQuanTriVien'];
+}
+else 
+    header('location:index.php');
  ?>
 
  
@@ -21,6 +25,7 @@ header('location:index.php');
                   
                     <a class="text-body mr-3" href="home.php"><?php echo $recent?></a>
                     <a class="text-body mr-3" href="../../index.php">Quản trị viên</a>
+                    <a class="text-body mr-3" href="./include/logout.php">Đăng xuất</a>
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
@@ -28,8 +33,9 @@ header('location:index.php');
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài khoản</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Đăng kí</button>
+                            <button class="dropdown-item" type="button">Đăng ký</button>
                             <button class="dropdown-item" type="button">Đăng nhập</button>
+                            <button class="dropdown-item" type="button">Đăng xuất</button>
                         </div>
                     </div>
 

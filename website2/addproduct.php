@@ -12,8 +12,8 @@
 
 <body>
     <?php
-    	include('./include/connect.php');
-	    include('./include/header.php');
+    include('./include/connect.php');
+    include('./include/header.php');
     ?>
 
     <?php
@@ -37,12 +37,12 @@
         return $masp_new;
     }
 
-    // if(lay_msp() <10)
-    // 	$MASP1  = "SP000". lay_mkh();
-	// else{
-	// 	$MASP1= Lay_msp() <100? "SP00". lay_mkh() : "SP". lay_mkh();
-	// }
-    $MASP1  = "SP000" . lay_msp();
+    if (lay_msp() < 10)
+        $MASP1  = "SP000" . lay_msp();
+    else {
+        $MASP1 = Lay_msp() < 100 ? "SP00" . lay_msp() : "SP" . lay_msp();
+    }
+
     ?>
     <?php
     if (isset($_POST['luu'])) {
@@ -58,12 +58,6 @@
         move_uploaded_file($_FILES["ANHSP"]["tmp_name"], "img/" . $_FILES["ANHSP"]["name"]);
         $ANHSP = $_FILES['ANHSP']['name'];
 
-        // $query =
-        // "UPDATE sanpham
-        // SET  TENSP = '$TENSP', KICHTHUOC = '$KICHTHUOC', DONGIA = '$DONGIA',
-        //         SLTON = '$SLTON', ANHSP = '$ANHSP'
-        //         WHERE MASP = '$MASP'
-        // ";
         $query = "INSERT INTO sanpham 
                     VALUES ('$MASP','$MALSP','$TENSP','$DVT','$KICHTHUOC',
 				'$DONGIA','$MANCC','$SLTON','$CHITIETSP','$ANHSP')
@@ -76,13 +70,7 @@
             echo "<p>Có lỗi, không thể thêm được</p>";
             echo "<p>" . mysqli_error($abc) . "<br/><br />Query: " . $query . "</p>";
         }
-
-        // header('location: index_qlsp.php?page=1');
-        // mysqli_close($abc);
     }
-
-    // mã tăng tự động
-
 
     ?>
 
@@ -157,8 +145,6 @@
             </tr>
             <tr>
                 <td>Ảnh sản phẩm </td>
-                <!-- <td><input class="rounded-pill mb-3 pl-3 " type="text" name="DONGIA" size="50" value="" /></td> -->
-                <!-- <td><?php echo '<img class="fix_img" width="200px" src="./images/' . $rows[5] . '">'; ?></td> -->
             </tr>
             <tr>
                 <td></td>
@@ -172,11 +158,10 @@
                     <a href="/website2/admin.php"><input class="rounded-pill mb-3  btn btn-primary" type="button" value="Trở về"></a>
                 </td>
             </tr>
-
-
         </table>
 
     </form>
 </body>
 <?php include('./include/footer.html'); ?>
+
 </html>
