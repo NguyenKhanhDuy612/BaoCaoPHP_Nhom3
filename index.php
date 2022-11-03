@@ -1,75 +1,76 @@
 <?php
-
-
-$conn = mysqli_connect('localhost', 'root', '', 'qlsg') or die('Could not connect to MySQL: ' . mysqli_connect_error());
+$conn = mysqli_connect ('localhost','root','','qlsg') OR die ('Could not connect to MySQL: ' . mysqli_connect_error() );
 mysqli_set_charset($conn, 'UTF8');
 
 session_start();
 
-if (isset($_POST['submit'])) {
+if(isset($_POST['submit'])){
    $tenDN = mysqli_real_escape_string($conn, $_POST['tenDN']);
    $mk = $_POST['mk'];
 
-   $select = " SELECT MANV,TENNV,NGAYSINH,SDT,CHUCVU,TENDN,MK,ANHNV,EMAIL FROM nhanvien WHERE TENDN = '$tenDN' && MK = '$mk' ";
+   $staffSelect = "SELECT CHUCVU, TENNV, TENDN, MK FROM nhanvien WHERE TENDN = '$tenDN' && MK = '$mk' ";
+   $custormerSelect = "SELECT TENDN,TENKH, MK FROM khachhang WHERE TENDN = '$tenDN' && MK = '$mk' ";
 
-   $result = mysqli_query($conn, $select);
+   $staffResult = mysqli_query($conn, $staffSelect);
+   $custormerResult = mysqli_query($conn, $custormerSelect);
 
-   if (mysqli_num_rows($result) <> 0) {
-      while ($rows = mysqli_fetch_row($result)) {
-         if ($rows[4] == 'Quản Lý' || $rows[4] == 'Quản trị viên') {
+   if(mysqli_num_rows($staffResult) <> 0){
+      while($rows=mysqli_fetch_row($staffResult)){
+         if($rows[0] == 'Quản Lý'){
             $_SESSION['tenQuanTriVien'] = $rows[1];
-
-            // header('location:./code/xu_ly_san_pham/index_qlsp.php');
-
-            header('location: exercise/xu_ly_san_pham/index_qlsp.php');
-
-         } elseif ($rows[4] == 'Nhân Viên') {
+            header('location:/website2/admin.php');
+         }
+         elseif($rows[0] == 'Nhân Viên'){
             $_SESSION['tenNguoiDung'] = $rows[1];
-            header('location: user_page.php');
+            header('location:website2/home.php');
          }
       }
-   } else {
+   }
+   elseif(mysqli_num_rows($custormerResult) <> 0)
+   {
+      while($rows=mysqli_fetch_row($custormerResult)){
+         $_SESSION['tenQuanTriVien'] = $rows[1];
+         header('location:website2/home.php');
+      }
+   }
+   else{
       $error[] = 'Tên đăng nhập hoặc mật khẩu không đúng!';
    }
+
 };
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Đăng nhập tài khoản</title>
 
-   <!-- custom css file link  -->
    <link rel="stylesheet" href="./includes/css/style_page2.css">
 
 </head>
-
 <body>
+   
+<div class="form-container">
 
-   <div class="form-container">
-
-      <form action="" method="post">
-         <h3>Đăng nhập</h3>
-         <!-- <h3>Đăng nhập</h3> -->
-         <?php
-         if (isset($error)) {
-            foreach ($error as $error) {
-               echo '<span class="error-msg">' . $error . '</span>';
-            };
+   <form action="" method="post">
+      <h3>Đăng nhập</h3>
+      <?php
+      if(isset($error)){
+         foreach($error as $error){
+            echo '<span class="error-msg">'.$error.'</span>';
          };
-         ?>
-         <input type="text" name="tenDN" required placeholder="Nhập tên đăng nhập">
-         <input type="password" name="mk" required placeholder="Nhập mật khẩu">
-         <input type="submit" name="submit" value="Đăng nhập" class="form-btn">
-         <p>Bạn chưa có tài khoản? <a href="./website/register_form.php">Đăng ký ngay</a></p>
-      </form>
+      };
+      ?>
+      <input type="text" name="tenDN" required placeholder="Tên đăng nhập">
+      <input type="password" name="mk" required placeholder="Mật khẩu">
+      <input type="submit" name="submit" value="Đăng nhập" class="form-btn">
+      <p>Bạn chưa có tài khoản? <a href="./website/register_form.php">Đăng ký ngay</a></p>
+   </form>
 
-   </div>
+</div>
 
 </body>
-
 </html>
