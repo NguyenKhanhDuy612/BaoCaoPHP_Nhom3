@@ -46,11 +46,7 @@
 
 
     <?php 
-        // $conn = mysqli_connect ('localhost','root','','qlsg') OR die ('Could not connect to MySQL: ' . mysqli_connect_error() );
        
-        // $select = "SELECT sanpham.TENSP, sanpham.KICHTHUOC, sanpham.DONGIA, sanpham.SLTON, sanpham.CHITIETSP, loaisp.TENLSP, sanpham.ANHSP, nhacc.TENNCC FROM sanpham,loaisp,nhacc WHERE sanpham.MASP='$MASP' and sanpham.MALSP = loaisp.MALSP and sanpham.MANCC = nhacc.MANCC";
-        // $result = mysqli_query($conn, $select);
-
         if(isset($_GET["id"])&& !empty($_GET["id"])){
             $MASP = $_GET['id'];
 
@@ -59,8 +55,6 @@
     
             $result = mysqli_query($abc, $sql);
 
-         
-    
             if(mysqli_num_rows($result) <> 0){
                 while($rows=mysqli_fetch_row($result)){
                     $tenSP = $rows[0];

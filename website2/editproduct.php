@@ -34,10 +34,10 @@
     $query = "SELECT MASP,TENSP,KICHTHUOC,DONGIA,SLTON,ANHSP
 					from  SANPHAM 
                     where MASP='$MASP'";
-    // $query = "SELECT * FROM SANPHAM ";
+   
     $result = mysqli_query($abc, $query);
     $rows = mysqli_fetch_row($result);
-    // $nhanVien = $result->fetch_assoc();
+  
     ?>
     <form action="" method="post" enctype="multipart/form-data">
         <table bgcolor="" align="center" width="60%" border="0">
@@ -90,7 +90,7 @@
     </form>
     <?php
 
-    // if($_SERVER['REQUEST_METHOD']=="POST"){
+   
     if (isset($_POST['luu'])) {
 
         $TENSP = trim($_POST['TENSP']);
@@ -114,9 +114,7 @@
             echo "<p>Có lỗi, không thể thêm được</p>";
             echo "<p>" . mysqli_error($abc) . "<br/><br />Query: " . $query . "</p>";
         }
-        // header('Location: index_qlsp.php');
-        // exit;
-        // header('location: http://localhost:3000/website2/index_qlsp.php');
+       
     }
     mysqli_close($abc);
     ?>
