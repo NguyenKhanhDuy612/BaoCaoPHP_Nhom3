@@ -9,11 +9,12 @@
     <link href="css/style.css" rel="stylesheet">
 
 </head>
-
+<?php include('./include/header.php');?>
 <body>
-    <?php
+   <div class="container">
+   <?php
     include('./include/connect.php');
-    include('./include/header.php');
+    // include('./include/header.php');
     ?>
 
     <?php
@@ -161,6 +162,7 @@
         </table>
 
     </form>
+   </div>
 </body>
 <?php include('./include/footer.html'); ?>
 

@@ -24,19 +24,19 @@ else
                 <div class="d-inline-flex align-items-center h-100">
                   
                     <a class="text-body mr-3" href="home.php"><?php echo $recent?></a>
-                    <a class="text-body mr-3" href="../../index.php">Quản trị viên</a>
-                    <a class="text-body mr-3" href="./include/logout.php">Đăng xuất</a>
+                    <a class="text-body mr-3" href="./include/logout.php">Quản trị viên</a>
+                    <!-- <a class="text-body mr-3" href="./include/logout.php">Đăng xuất</a> -->
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài khoản</button>
-                        <div class="dropdown-menu dropdown-menu-right">
+                    <a class="text-body mr-3" href="./include/logout.php">Đăng xuất</a>
+                        <!-- <div class="dropdown-menu dropdown-menu-right">
                             <button class="dropdown-item" type="button">Đăng ký</button>
                             <button class="dropdown-item" type="button">Đăng nhập</button>
                             <button class="dropdown-item" type="button">Đăng xuất</button>
-                        </div>
+                        </div> -->
                     </div>
 
                 </div>
