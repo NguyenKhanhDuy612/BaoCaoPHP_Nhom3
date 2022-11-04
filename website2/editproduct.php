@@ -39,13 +39,15 @@
     $rows = mysqli_fetch_row($result);
   
     ?>
-    <form action="" method="post" enctype="multipart/form-data">
+    
+<div class="container">
+<form action="" method="post" enctype="multipart/form-data">
         <table bgcolor="" align="center" width="60%" border="0">
             <tr bgcolor="">
                 <td colspan="2" align="center">
                     <div color="blue">
                         <p class='title' align='center'>
-                            <font size='15'> CẬP NHẬT THÔNG TIN SẢN PHẨM</font>
+                            <font size='15'> CẬP NHẬT SẢN PHẨM</font>
                         </P>
                     </div>
                 </td>
@@ -88,6 +90,8 @@
         </table>
 
     </form>
+</div>
+
     <?php
 
    
