@@ -8,6 +8,7 @@
 
     <title>Phép tính với 2 số</title>
     <link rel="stylesheet" href="/includes/style.css">
+    <link rel="stylesheet" href="/includes/css/style_page.css">
     <style>
        
         td {
@@ -24,7 +25,8 @@
 </head>
 
 <body>
-<?php include('../../includes/header2.html') ?>
+<?php include('../../includes/html/header2.html') ?>
+
     <!-- ketquapheptinh.php -->
     <center>
     <form action="./ketquapheptinh.php" method="POST">
@@ -72,7 +74,7 @@
     </center>
 
 
-    <?php include('../../includes/footer.html') ?>
+    <?php include('../../includes/html/footer.html') ?>
 </body>
 
 </html>

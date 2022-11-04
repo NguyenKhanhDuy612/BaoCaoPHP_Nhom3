@@ -44,7 +44,7 @@
 
         <div class="content">
             <div class="EmpImg">
-                <img src="../images/suu.jpg" alt="Alternate Text" />
+                <img src="../images/images_xlsp/nam.PNG" alt="Alternate Text" />
             </div>
 
             <div style="padding: 50px">
@@ -83,7 +83,7 @@
 
         <div class="content">
             <div class="EmpImg">
-                <img src="../images/thin.jpg" alt="Alternate Text" />
+                <img src="../images/images_xlsp/nam.PNG" alt="Alternate Text" />
             </div>
 
             <div style="padding: 50px">
@@ -122,7 +122,7 @@
 
         <div class="content">
             <div class="EmpImg">
-                <img src="../images/hoi.jpg" alt="Alternate Text" />
+                <img src="../images/images_xlsp/nam.PNG" alt="Alternate Text" />
             </div>
 
             <div style="padding: 50px">

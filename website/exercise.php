@@ -22,7 +22,7 @@
                 <li><a href="../exercise/array/B6_Timkiem.php">Tìm kiếm trong mảng</a></li>
                 <li><a href="../exercise/array/B7_Thaythe.php">Thay thế phần tử</a></li>
                 <li><a href="../exercise/array/B9_Ghepmang.php">Ghép mảng</a></li>
-                <li><a href="../exercise/array/Matran.php">Ma trận số nguyên</a></li>
+                <li><a href="../exercise/array/B4_Matran.php">Ma trận số nguyên</a></li>
             </ul>
         </li>
         <li><a href="#">Bài tập Form</a>
