@@ -13,7 +13,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -27,8 +27,8 @@
 </head>
 
 <body>
-   
-    <?php include('../website2/include/header.php');?>
+
+    <?php include('../website2/include/header.php'); ?>
 
     <!-- Breadcrumb Start -->
     <div class="container-fluid">
@@ -45,29 +45,29 @@
     <!-- Breadcrumb End -->
 
 
-    <?php 
-       
-        if(isset($_GET["id"])&& !empty($_GET["id"])){
-            $MASP = $_GET['id'];
+    <?php
 
-            include('../exercise/xu_ly_san_pham/connect.php');
-            $sql = "SELECT sanpham.TENSP, sanpham.KICHTHUOC, sanpham.DONGIA, sanpham.SLTON, sanpham.CHITIETSP, loaisp.TENLSP, sanpham.ANHSP, nhacc.TENNCC FROM sanpham,loaisp,nhacc WHERE sanpham.MASP='$MASP' and sanpham.MALSP = loaisp.MALSP and sanpham.MANCC = nhacc.MANCC";
-    
-            $result = mysqli_query($abc, $sql);
+    if (isset($_GET["id"]) && !empty($_GET["id"])) {
+        $MASP = $_GET['id'];
 
-            if(mysqli_num_rows($result) <> 0){
-                while($rows=mysqli_fetch_row($result)){
-                    $tenSP = $rows[0];
-                    $hinhSP = $rows[6];
-                    $giaSP = number_format($rows[2],0,',','.')." VND";
-                    $chiTietSP = $rows[4];
-                    $tenLSP = $rows[5];
-                    $tenNCC = $rows[7];
-                    $soLuongTon = $rows[3];
-                }
+        include('../exercise/xu_ly_san_pham/connect.php');
+        $sql = "SELECT sanpham.TENSP, sanpham.KICHTHUOC, sanpham.DONGIA, sanpham.SLTON, sanpham.CHITIETSP, loaisp.TENLSP, sanpham.ANHSP, nhacc.TENNCC FROM sanpham,loaisp,nhacc WHERE sanpham.MASP='$MASP' and sanpham.MALSP = loaisp.MALSP and sanpham.MANCC = nhacc.MANCC";
+
+        $result = mysqli_query($abc, $sql);
+
+        if (mysqli_num_rows($result) <> 0) {
+            while ($rows = mysqli_fetch_row($result)) {
+                $tenSP = $rows[0];
+                $hinhSP = $rows[6];
+                $giaSP = number_format($rows[2], 0, ',', '.') . " VND";
+                $chiTietSP = $rows[4];
+                $tenLSP = $rows[5];
+                $tenNCC = $rows[7];
+                $soLuongTon = $rows[3];
             }
         }
-      
+    }
+
     ?>
 
     <form action="" method="POST">
@@ -161,9 +161,9 @@
                             </div>
                             <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Thêm vào giỏ hàng </button>
                         </div>
-                        <div class="d-flex pt-2">
+                        <div class="d-flex pt-2" style="line-height: 57.62px;">
                             <strong class="text-dark mr-2">Chia sẻ:</strong>
-                            <div class="d-inline-flex">
+                            <div class="d-inline-flex" >
                                 <a class="text-dark px-2" href="">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
@@ -176,8 +176,11 @@
                                 <a class="text-dark px-2" href="">
                                     <i class="fab fa-pinterest"></i>
                                 </a>
+                                <a class="text-dark " href="javascript:window.history.back(-1)"><input class="rounded-pill btn btn-primary" type="button" value="Trở về"></a>
+
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -198,25 +201,25 @@
                                                 Loại sản phẩm:
                                             </li>
                                             <li class="list-group-item px-0">
-                                                Tên nhà cung cấp: 
+                                                Tên nhà cung cấp:
                                             </li>
                                             <li class="list-group-item px-0">
-                                                Số lượng tồn: 
+                                                Số lượng tồn:
                                             </li>
-                                          </ul> 
+                                        </ul>
                                     </div>
                                     <div class="col-md-6">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item px-0">
-                                                <?php echo $tenLSP;?>
+                                                <?php echo $tenLSP; ?>
                                             </li>
                                             <li class="list-group-item px-0">
-                                                <?php echo $tenNCC;?>
+                                                <?php echo $tenNCC; ?>
                                             </li>
                                             <li class="list-group-item px-0">
-                                                <?php echo $soLuongTon;?>
+                                                <?php echo $soLuongTon; ?>
                                             </li>
-                                          </ul> 
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -285,17 +288,17 @@
             <div class="row px-xl-5">
                 <div class="col">
                     <div class="owl-carousel related-carousel">
-                        
-                        <?php 
-                            include('../exercise/xu_ly_san_pham/connect.php');
-                            // $conn = mysqli_connect ('localhost','root','','qlsg') OR die ('Could not connect to MySQL: ' . mysqli_connect_error() );
-                            $sumarySelect = "SELECT TENSP, DONGIA, MASP, ANHSP FROM sanpham";
-                            $sumaryResult = mysqli_query($abc, $sumarySelect);
 
-                            if(mysqli_num_rows($sumaryResult) <> 0){
-                                while($rows=mysqli_fetch_row($sumaryResult)){
-                                    $rows[1] = number_format($rows[1], 0, ',', '.') . " VNĐ";
-                                    echo "
+                        <?php
+                        include('../exercise/xu_ly_san_pham/connect.php');
+                        // $conn = mysqli_connect ('localhost','root','','qlsg') OR die ('Could not connect to MySQL: ' . mysqli_connect_error() );
+                        $sumarySelect = "SELECT TENSP, DONGIA, MASP, ANHSP FROM sanpham";
+                        $sumaryResult = mysqli_query($abc, $sumarySelect);
+
+                        if (mysqli_num_rows($sumaryResult) <> 0) {
+                            while ($rows = mysqli_fetch_row($sumaryResult)) {
+                                $rows[1] = number_format($rows[1], 0, ',', '.') . " VNĐ";
+                                echo "
                                         <div class='product-item bg-light'>
                                             <div class='product-img position-relative overflow-hidden'>
                                                 <img class='img-fluid w-100' src='img/$rows[3]' alt=''>
@@ -322,18 +325,19 @@
                                                 </div>
                                         </div>
                                     ";
-                                }
                             }
+                        }
                         ?>
                     </div>
                 </div>
             </div>
         </div>
+
     </form>
 
 
     <!-- Footer Start -->
-    <?php include('../website2/include/footer.html');?>
+    <?php include('../website2/include/footer.html'); ?>
     <!-- Footer End -->
 
 

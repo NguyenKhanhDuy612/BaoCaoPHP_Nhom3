@@ -1,130 +1,130 @@
-
-<?php 
+<?php
 session_start();
 $recent = "";
 
-if(isset($_SESSION['tenNguoiDung'])){ //sua mo nay
+if (isset($_SESSION['tenNguoiDung'])) { //sua mo nay
     $recent = $_SESSION['tenNguoiDung'];
-}
-elseif(isset($_SESSION['tenQuanTriVien'])){
+} elseif (isset($_SESSION['tenQuanTriVien'])) {
     $recent = $_SESSION['tenQuanTriVien'];
-}
-else 
+} else
     header('location:index.php');
- ?>
-
- 
+?>
 
 
+<?php
+include('./include/connect.php');
+if (isset($_POST['tim'])) {
+    $tensp = $_POST['tensp'];
+    $sql = "SELECT TENSP,DONGIA,ANHSP,MASP FROM  SANPHAM where TENSP LIKE '%$tensp%'";
+    $result = mysqli_query($abc, $sql);
+}
 
-    <!-- Topbar Start -->
-    <div class="container-fluid">
-        <div class="row bg-secondary py-1 px-xl-5">
-            <div class="col-lg-6 d-none d-lg-block">
-                <div class="d-inline-flex align-items-center h-100">
-                  
-                    <a class="text-body mr-3" href="home.php"><?php echo $recent?></a>
-                    <a class="text-body mr-3" href="./include/logout.php">Quản trị viên</a>
-                    <!-- <a class="text-body mr-3" href="./include/logout.php">Đăng xuất</a> -->
-                </div>
+?>
+
+
+<!-- Topbar Start -->
+<div class="container-fluid">
+    <div class="row bg-secondary py-1 px-xl-5">
+        <div class="col-lg-6 d-none d-lg-block">
+            <div class="d-inline-flex align-items-center h-100">
+
+                <a class="text-body mr-3" href="home.php"><?php echo $recent ?></a>
+                <a class="text-body mr-3" href="./include/logout.php">Quản trị viên</a>
             </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <div class="btn-group">
+        </div>
+        <div class="col-lg-6 text-center text-lg-right">
+            <div class="d-inline-flex align-items-center">
+                <div class="btn-group">
                     <a class="text-body mr-3" href="./include/logout.php">Đăng xuất</a>
-                        <!-- <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Đăng ký</button>
-                            <button class="dropdown-item" type="button">Đăng nhập</button>
-                            <button class="dropdown-item" type="button">Đăng xuất</button>
-                        </div> -->
-                    </div>
+                </div>
 
-                </div>
-                <div class="d-inline-flex align-items-center d-block d-lg-none">
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-heart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-shopping-cart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
-                </div>
             </div>
-        </div>
-        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-            <div class="col-lg-4">
-                <a href="" class="text-decoration-none">
-                    <span class="h1 text-uppercase text-primary bg-dark px-2">Phước An</span>
-                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
+            <div class="d-inline-flex align-items-center d-block d-lg-none">
+                <a href="" class="btn px-0 ml-2">
+                    <i class="fas fa-heart text-dark"></i>
+                    <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+                </a>
+                <a href="" class="btn px-0 ml-2">
+                    <i class="fas fa-shopping-cart text-dark"></i>
+                    <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
                 </a>
             </div>
-            <div class="col-lg-4 col-6 text-left">
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Tìm kiếm">
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
+        </div>
+    </div>
+    <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+        <div class="col-lg-4">
+            <a href="" class="text-decoration-none">
+                <span class="h1 text-uppercase text-primary bg-dark px-2">Phước An</span>
+                <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
+            </a>
+        </div>
+        <div class="col-lg-4 col-6 text-left">
+            <form action="./searchproduct.php" method="POST">
+                <div class="input-group">
+                    <input name="tensp" type="text" class="form-control" placeholder="Tên sản phẩm">
+                    <div class="input-group-append">
+                        <!-- <span class="input-group-text bg-transparent text-primary">
                                 <i class="fa fa-search"></i>
-                            </span>
-                        </div>
+                            </span>  -->
+                        <input class="btn btn-primary" type="submit" name="tim" value="Tìm kiếm">
                     </div>
-                </form>
-            </div>
-
+                </div>
+            </form>
         </div>
+
     </div>
-    <!-- Topbar End -->
+</div>
+<!-- Topbar End -->
 
 
-    <!-- Navbar Start -->
-    <div class="container-fluid bg-dark mb-30">
-        <div class="row px-xl-5">
-            <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
-                    <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Phước An</h6>
-                    <i class="fa fa-angle-down text-dark"></i>
+<!-- Navbar Start -->
+<div class="container-fluid bg-dark mb-30">
+    <div class="row px-xl-5">
+        <div class="col-lg-3 d-none d-lg-block">
+            <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
+                <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Phước An</h6>
+                <i class="fa fa-angle-down text-dark"></i>
+            </a>
+            <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
+
+            </nav>
+        </div>
+        <div class="col-lg-9">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
+                <a href="" class="text-decoration-none d-block d-lg-none">
+                    <span class="h1 text-uppercase text-dark bg-light px-2">Multi</span>
+                    <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Shop</span>
                 </a>
-                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
-
-                </nav>
-            </div>
-            <div class="col-lg-9">
-                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
-                        <span class="h1 text-uppercase text-dark bg-light px-2">Multi</span>
-                        <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Shop</span>
-                    </a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class="navbar-nav mr-auto py-0">
-                            <a href="home.php" class="nav-item nav-link active">Trang chủ</a>
-                            <!-- <a href="shop.html" class="nav-item nav-link">Shop</a> -->
-                            <a href="home.php" class="nav-item nav-link">Sản phẩm</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Giỏ hàng <i class="fa fa-angle-down mt-1"></i></a>
-                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">Giỏ hàng của bạn</a>
-                                    <a href="checkout.html" class="dropdown-item">Thanh toán</a>
-                                </div>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto py-0">
+                        <a href="home.php" class="nav-item nav-link active">Trang chủ</a>
+                        <!-- <a href="shop.html" class="nav-item nav-link">Shop</a> -->
+                        <a href="home.php" class="nav-item nav-link">Sản phẩm</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Giỏ hàng <i class="fa fa-angle-down mt-1"></i></a>
+                            <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                <a href="cart.html" class="dropdown-item">Giỏ hàng của bạn</a>
+                                <a href="checkout.html" class="dropdown-item">Thanh toán</a>
                             </div>
-                            <a href="contact.php" class="nav-item nav-link">Liên hệ</a>
                         </div>
-                        <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                            <a href="" class="btn px-0">
-                                <i class="fas fa-heart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
-                            </a>
-                            <a href="" class="btn px-0 ml-3">
-                                <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
-                            </a>
-                        </div>
+                        <a href="contact.php" class="nav-item nav-link">Liên hệ</a>
                     </div>
-                </nav>
-            </div>
+                    <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
+                        <a href="" class="btn px-0">
+                            <i class="fas fa-heart text-primary"></i>
+                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                        </a>
+                        <a href="" class="btn px-0 ml-3">
+                            <i class="fas fa-shopping-cart text-primary"></i>
+                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
         </div>
     </div>
-    <!-- Navbar End -->
+</div>
+<!-- Navbar End -->
