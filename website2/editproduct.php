@@ -41,6 +41,37 @@
     ?>
     
 <div class="container">
+<?php
+
+   
+if (isset($_POST['luu'])) {
+
+    $TENSP = trim($_POST['TENSP']);
+    $KICHTHUOC = trim($_POST['KICHTHUOC']);
+    $DONGIA = trim($_POST['DONGIA']);
+    $SLTON = trim($_POST['SLTON']);
+    move_uploaded_file($_FILES["ANHSP"]["tmp_name"], "img/" . $_FILES["ANHSP"]["name"]);
+    $ANHSP = $_FILES['ANHSP']['name'];
+
+    $query =
+        "UPDATE sanpham
+        SET  TENSP = '$TENSP', KICHTHUOC = '$KICHTHUOC', DONGIA = '$DONGIA',
+                SLTON = '$SLTON', ANHSP = '$ANHSP'
+                WHERE MASP = '$MASP'
+        ";
+    $result = mysqli_query($abc, $query);
+    if (mysqli_affected_rows($abc) == 1) { //neu them thanh cong
+        // echo '<center pt-2 ><strong>Cập nhật thành công!</strong></center>';
+        echo '<div class="alert alert-success"><strong>Thành công!</strong> Một sản phẩm đã được cập nhật.</div>';
+    } else //neu khong them duoc
+    {
+        echo "<p>Có lỗi, không thể thêm được</p>";
+        echo "<p>" . mysqli_error($abc) . "<br/><br />Query: " . $query . "</p>";
+    }
+   
+}
+mysqli_close($abc);
+?>
 <form action="" method="post" enctype="multipart/form-data">
         <table bgcolor="" align="center" width="60%" border="0">
             <tr bgcolor="">
@@ -92,36 +123,7 @@
     </form>
 </div>
 
-    <?php
-
    
-    if (isset($_POST['luu'])) {
-
-        $TENSP = trim($_POST['TENSP']);
-        $KICHTHUOC = trim($_POST['KICHTHUOC']);
-        $DONGIA = trim($_POST['DONGIA']);
-        $SLTON = trim($_POST['SLTON']);
-        move_uploaded_file($_FILES["ANHSP"]["tmp_name"], "img/" . $_FILES["ANHSP"]["name"]);
-        $ANHSP = $_FILES['ANHSP']['name'];
-
-        $query =
-            "UPDATE sanpham
-            SET  TENSP = '$TENSP', KICHTHUOC = '$KICHTHUOC', DONGIA = '$DONGIA',
-                    SLTON = '$SLTON', ANHSP = '$ANHSP'
-                    WHERE MASP = '$MASP'
-            ";
-        $result = mysqli_query($abc, $query);
-        if (mysqli_affected_rows($abc) == 1) { //neu them thanh cong
-            echo '<center pt-2 ><strong>Cập nhật thành công!</strong></center>';
-        } else //neu khong them duoc
-        {
-            echo "<p>Có lỗi, không thể thêm được</p>";
-            echo "<p>" . mysqli_error($abc) . "<br/><br />Query: " . $query . "</p>";
-        }
-       
-    }
-    mysqli_close($abc);
-    ?>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 </body>

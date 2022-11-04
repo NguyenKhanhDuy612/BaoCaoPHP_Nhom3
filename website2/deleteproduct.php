@@ -9,7 +9,9 @@
 </head>
 
 <body>
+	
     <?php require('./include/header.php'); ?>
+	<div class="container">
 	<?php
 	 include('./include/connect.php');
 	
@@ -17,7 +19,7 @@
 		$id = $_GET['id'];
 		$sql = "DELETE FROM sanpham WHERE MASP='$id'";
 		if ($abc->query($sql) === TRUE) {
-			echo "<center ><h5 >Xoá thành công!</h5></center>";
+			echo '<div class="alert alert-success"><strong>Thành công!</strong> Một sản phẩm đã được xoá.</div>';
 		} else {
 			echo "Error updating record: " . $abc->error;
 		}
@@ -27,6 +29,7 @@
 	?>
 
 	<center><a href="admin.php"><input class="rounded-pill mb-3  btn btn-primary mt-5" type="button" value="Trở về"></a></center>
+	</div>
 </body>
 
 </html>

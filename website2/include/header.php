@@ -30,6 +30,7 @@ if (isset($_POST['tim'])) {
 
                 <a class="text-body mr-3" href="home.php"><?php echo $recent ?></a>
                 <a class="text-body mr-3" href="./include/logout.php">Quản trị viên</a>
+                <a class="text-body mr-3" href="../../website/admin_page.php">Báo cáo nhóm</a>
             </div>
         </div>
         <div class="col-lg-6 text-center text-lg-right">

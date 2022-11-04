@@ -18,14 +18,14 @@
     ?>
     <div class="container">
         <?php
-
-        echo "<p class='title' align='center'><font size='15'> THÔNG TIN SẢN PHẨM</font></P>";
+        if(!isset($_POST['tensp'])) $tensp = "";
+        echo "<p class='title' align='center'><font size='15'> QUẢN LÝ SẢN PHẨM</font></P>";
 
         echo '<div class = "navbar add_search">';
-        echo '<div class="add_search-them" type="text" class=""><a href="addproduct.php"><h4> Thêm sản phẩm</h4></a></div>'; ?>
-
+        // echo '<div class="add_search-them" type="text" class=""><a href="addproduct.php"><h4> Thêm sản phẩm</h4></a></div>'
+        echo "<a href='addproduct.php'><input class='rounded-pill mb-3  btn btn-success' type='button' value='Thêm sản phẩm'></a>";?>
         <form class="add_search-tim" action="admin.php" method="POST">
-            <input class="rounded-pill" name="tensp" placeholder="" value="">
+            <input class="rounded-pill pl-3" name="tensp" placeholder="Tên sản phẩm" value="<?php echo $tensp?>" >
             <input class="btn btn-success rounded-pill " type="submit" value="Tìm kiếm" name="tim">
         </form>
 
@@ -33,7 +33,7 @@
 
         if (isset($_POST['tim'])) {
             $tensp = $_POST['tensp'];
-            $rowsPerPage = 3; //số mẩu tin trên mỗi trang, giả sử là 10 
+            $rowsPerPage = 5; //số mẩu tin trên mỗi trang, giả sử là 10 
             if (!isset($_GET['page'])) {
                 $_GET['page'] = 1;
             }
@@ -53,6 +53,7 @@
                         <th>Đơn giá</th> 
                         <th>Nhà cung cấp</th> 
                         <th>Số lượng</th>
+                        <th>Chi tiết</th>
                         <th>Sửa</th>
                         <th>Xóa</th>
                         
@@ -68,8 +69,9 @@
                     echo "<td>" . $rows[3] = number_format($rows[3], 0, ',', '.') . " VND" . "</td>";
                     echo "<td>$rows[4]</td>";
                     echo "<td>$rows[5]</td>";
+                    echo "<td><a href='detailproduct.php?id=$rows[0]'><img src='./img/details.png' width='25px' ></td>";
                     echo "<td><a href='editproduct.php?id=$rows[0]'><img src='./img/sua.png' width='25px' ></td>";
-                    echo "<td><a onclick='return confirm(`You có muốn xóa không?`)' href='deleteproduct.php?id=$rows[0]'><img src='./img/xoa.jpg' width='25px' ></td>";
+                    echo "<td><a onclick='return confirm(`Bạn có muốn chắc xóa ?`)' href='deleteproduct.php?id=$rows[0]'><img src='./img/xoa.jpg' width='25px' ></td>";
                     echo "</tr></tbody>";
                     $stt += 1;
                 }
@@ -80,7 +82,7 @@
             </center>";
             echo "</div>";
         } else {
-            $rowsPerPage = 3; //số mẩu tin trên mỗi trang, giả sử là 10 
+            $rowsPerPage = 5; //số mẩu tin trên mỗi trang, giả sử là 10 
             if (!isset($_GET['page'])) {
                 $_GET['page'] = 1;
             }
@@ -100,6 +102,7 @@
                     <th>Đơn giá</th> 
                     <th>Nhà cung cấp</th> 
                     <th>Số lượng</th>
+                    <th>Chi tiết</th>
                     <th>Sửa</th>
                     <th>Xóa</th>
                     
@@ -115,7 +118,7 @@
                     echo "<td>" . $rows[3] = number_format($rows[3], 0, ',', '.') . " VND" . "</td>";
                     echo "<td>$rows[4]</td>";
                     echo "<td>$rows[5]</td>";
-
+                    echo "<td><a href='detailproduct.php?id=$rows[0]'><img src='./img/details.png' width='25px' ></td>";
                     echo "<td><a href='editproduct.php?id=$rows[0]'><img src='./img/sua.png' width='25px' ></td>";
                     echo "<td><a onclick='return confirm(`You có muốn xóa không?`)' href='deleteproduct.php?id=$rows[0]'><img src='./img/xoa.jpg' width='25px' ></td>";
                     echo "</tr></tbody>";
