@@ -156,7 +156,7 @@
                     <input class="rounded-pill mb-3  btn btn-success " type="submit" name="luu" size="10" value="Lưu" />
                 </td>
                 <td align="center">
-                    <a href="/website2/admin.php"><input class="rounded-pill mb-3  btn btn-primary" type="button" value="Trở về"></a>
+                    <a href="admin.php"><input class="rounded-pill mb-3  btn btn-primary" type="button" value="Trở về"></a>
                 </td>
             </tr>
         </table>
