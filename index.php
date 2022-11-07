@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
       while($rows=mysqli_fetch_row($staffResult)){
          if($rows[0] == 'Quản Lý'){
             $_SESSION['tenQuanTriVien'] = $rows[1];
-            header('location:/website2/admin.php');
+            header('location:././website2/admin.php');
          }
          // elseif($rows[0] == 'Nhân Viên'){
          //    $_SESSION['tenNguoiDung'] = $rows[1];
@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
    {
       while($rows=mysqli_fetch_row($custormerResult)){
          $_SESSION['tenNguoiDung'] = $rows[1];
-         header('location:website2/home.php');
+         header('location:././website2/home.php');
       }
    }
    else{

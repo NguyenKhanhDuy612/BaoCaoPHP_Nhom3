@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Tìm kiếm thông tin sữa</title>
-    <link rel="stylesheet" href="/includes/css/style_page.css">
+    <link rel="stylesheet" href="../../includes/css/style_page.css">
 </head>
 
 <body>
@@ -59,7 +59,7 @@
             "<table align='center' width='1025px' border='1' cellpadding='2' cellspacing='2' style='border-collapse:collapse'>
                     <td align='center' colspan='2'  style='color:black;background:cyan'><h2>$rows[1]-$rows[10]</h2></td>
                     <tr >
-                    <td align='center'>  <img width='200px' height='200px' src='./anh/$rows[8]' /></td>
+                    <td align='center'>  <img width='200px' height='200px' src='../../images/$rows[8]' /></td>
                     <td style=width:400px;'> 
                         <p> <b>Thành phần dinh dưỡng:</b> <br> $rows[6]</p>
                         <p> <b>Lợi ích:</b> <br> $rows[7]</p>
@@ -71,7 +71,7 @@
         }else{
             echo "<center >Không tìm thấy sản phẩm nào !</center>";
         }
-        echo "<tr><td><a href='/website/exercise.php'><input type='button'value='Trở về'></a></td></tr>";
+        echo "<tr><td><a href='../../website/exercise.php'><input type='button'value='Trở về'></a></td></tr>";
 
         echo "</table>";
 

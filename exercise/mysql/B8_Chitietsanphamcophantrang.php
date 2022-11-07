@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Thông tin chi tiết sữa</title>
-    <link rel="stylesheet" href="/includes/css/style_page.css">
+    <link rel="stylesheet" href="../../includes/css/style_page.css">
 </head>
 
 <body>
@@ -42,7 +42,7 @@
                 "<table align='center' width='1025' border='1' cellpadding='2' cellspacing='2' style='border-collapse:collapse'>
                 <td align='center' colspan='2' style='color:red;'>$rows[1]-$rows[10]</td>
                 <tr >
-                <td align='center'>  <img width='200px' height='200px' src='./anh/$rows[8]' /></td>
+                <td align='center'>  <img width='200px' height='200px' src='../../images/$rows[8]' /></td>
                 <td style='width:290px'> 
                     <p> <b>Thành phần dinh dưỡng:</b> <br> $rows[6]</p>
                     <p> <b>Lợi ích:</b> <br> $rows[7]</p>
@@ -54,7 +54,7 @@
            
         }
     }
-    echo "<td><a href='/website/exercise.php'><input type='button'value='Trở về'></a></td>";
+    echo "<td><a href='../../website/exercise.php'><input type='button'value='Trở về'></a></td>";
         echo "</table>";
 
 

@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <title>Diện tích hình chữ nhật</title>
-    <link rel="stylesheet" href="/includes/css/style_page.css">
+    <link rel="stylesheet" href="../../includes/css/style_page.css">
     <style>
         td {
             width: 468px;
@@ -65,7 +65,7 @@
                 <td><input type="text" name="dientich" disabled="disabled" value="<?php echo $dientich; ?> " /></td>
             </tr>
             <tr>
-                <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
+                <td><a href="../../website/exercise.php"><input type="button" value="Trở về"></a></td>
                 <td ><input type="submit" value="   Tính   " name="tinh" /></td>
             </tr>
         </table>

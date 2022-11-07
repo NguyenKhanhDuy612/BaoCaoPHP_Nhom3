@@ -110,7 +110,7 @@
             </tr>
 
             <tr>
-            <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
+            <td><a href="../../website/exercise.php"><input type="button" value="Trở về"></a></td>
                 <td colspan="2" align="center"><label>(Các phần tử trong mảng sẽ cách nhau bằng dấu ",")</label></td>
             </tr>
 

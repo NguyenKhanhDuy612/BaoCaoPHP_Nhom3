@@ -36,7 +36,7 @@
             <a href="#">Bài tập MySQL</a>
             <ul class="second-level-menu">
                 <li><a href="../exercise/mysql/B2_Thongtinkhachhang.php">Thông tin khách hàng</a></li>
-                <li><a href="../exercise//mysql//B1_Thongtinhangsua.php">Thông tin hãng sữa</a></li>
+                <li><a href="../exercise/mysql/B1_Thongtinhangsua.php">Thông tin hãng sữa</a></li>
                 <li>
                     <a href="#">Thông tin sữa</a>
                     <ul class="third-level-menu">

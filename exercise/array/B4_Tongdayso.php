@@ -76,7 +76,7 @@
                 </tr>
                 <tr>
 
-                <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
+                <td><a href="../../website/exercise.php"><input type="button" value="Trở về"></a></td>
                     <td><input type="submit" name="tinh" size="20" value="Tính" /></td>
                     
                 </tr>

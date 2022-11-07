@@ -32,7 +32,7 @@ include('../../includes/html/header2.html');
                 </button> -->
                 <td><input type="submit" value="  Gửi  "></td>
                 <td></td>
-                <td><a href="/website/exercise.php"><input type="button" value="  Trở về  "></a></td>
+                <td><a href="../../website/exercise.php"><input type="button" value="  Trở về  "></a></td>
             </div>
         </form>
     </div>

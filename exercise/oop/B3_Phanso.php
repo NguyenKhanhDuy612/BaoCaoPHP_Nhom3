@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Phép tính trên phân số</title>
-    <link rel="stylesheet" href="/includes/css/style_page.css">
+    <link rel="stylesheet" href="../../includes/css/style_page.css">
 </head>
 <body>
 <?php include('../../includes/html/header2.html') ?>
@@ -203,7 +203,7 @@
 							</td>
 						</tr>
 						<tr>
-                        <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
+                        <td><a href="../../website/exercise.php"><input type="button" value="Trở về"></a></td>
 							<td colspan="3" align="center" ><input type="submit" name="xl" value="Kết quả"></td>
 						</tr>
 						<tr>

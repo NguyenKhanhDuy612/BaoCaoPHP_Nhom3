@@ -27,7 +27,7 @@
                 <table align='center' width='700' border='1' cellpadding='2' cellspacing='2' style='border-collapse:collapse'>
                 <td align='center' colspan='2' style='color:red;'>$rows[1]-$rows[10]</td>
                 <tr >
-                <td align='center'>  <img width='200px' height='200px' src='./anh/$rows[8]' /></td>
+                <td align='center'>  <img width='200px' height='200px' src='../../images/$rows[8]' /></td>
                 <td> 
                     <p> <b>Thành phần dinh dưỡng:</b> <br> $rows[6]</p>
                     <p> <b>Lợi ích:</b> <br> $rows[7]</p>

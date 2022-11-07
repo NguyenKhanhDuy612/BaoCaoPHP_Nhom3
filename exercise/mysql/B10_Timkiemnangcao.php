@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tìm kiếm sữa nâng cao</title>
-    <link rel="stylesheet" href="/includes/css/style_page.css">
+    <link rel="stylesheet" href="../../includes/css/style_page.css">
 </head>
 
 <body>
@@ -92,7 +92,7 @@
 
                     echo "<tr>";
                     echo "<td align='center' >";
-                    echo "<img src='./anh/$rows[2]' width=150 height=150 style='padding: 20px;'>";
+                    echo "<img src='../../images/$rows[2]' width=150 height=150 style='padding: 20px;'>";
                     echo "</td>";
 
                     echo "<td style=width:400px;'>";
@@ -104,7 +104,7 @@
                     echo "</td>";
                     }
                  }
-                 echo "<tr><td><a href='/website/exercise.php'><input type='button'value='Trở về'></a></td></tr>";
+                 echo "<tr><td><a href='../../website/exercise.php'><input type='button'value='Trở về'></a></td></tr>";
                 echo"</table>";
 
 
