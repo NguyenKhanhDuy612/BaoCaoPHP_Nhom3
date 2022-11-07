@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin sữa</title>
-    <link rel="stylesheet" href="/includes/css/style_page.css">
+    <link rel="stylesheet" href="../../includes/css/style_page.css">
 </head>
 <body>
     
@@ -53,7 +53,8 @@
                 echo  "<td width='400px' align='center'>
                             <a href='B7_Chitietsanpham.php?id=$rows[6]'>$rows[0]</a>
                             <p >$rows[2] - $rows[3] gram - $rows[4]</p> 
-                            <img width='100px' height = '120px' src='./anh/$rows[5]' />
+                            
+                            <img width='100px' height = '120px' src='../../images/$rows[5]' />
                         </td>";
                 $n++;
             }
@@ -64,6 +65,7 @@
         }
     }
     echo "</table>";
+   
 
     $re = mysqli_query($conn, 'select * from sua');
     //tổng số mẩu tin cần hiển thị

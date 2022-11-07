@@ -169,7 +169,7 @@ CREATE TABLE `nhanvien` (
 --
 
 INSERT INTO `nhanvien` (`MANV`, `TENNV`, `NGAYSINH`, `SDT`, `CHUCVU`, `TENDN`, `MK`, `ANHNV`, `EMAIL`) VALUES
-('NV0001', 'Nguyễn Nhật Minh', '2001-12-01', '+84905012354', 'Quản Lý', 'NV1', '1234', '', 'nhat@gmail.com'),
+('NV0001', 'Phước An Shop', '2001-12-01', '+84905012354', 'Quản Lý', 'admin', '2444666666', '', 'nhat@gmail.com'),
 ('NV0002', 'Phan Châu Tần', '2000-02-01', '+84902325654', 'Nhân Viên', 'NV2', '9999', '', 'tan@gmail.com'),
 ('NV0003', 'Nguyễn Bình Thạch', '1999-12-10', '+84925648754', 'Nhân Viên', 'NV3', 'nmt', '', 'thac@gmail.com'),
 ('NV0004', 'Phạm Ngũ Lão', '2002-04-05', '+84902154875', 'Nhân Viên', 'NV4', '5689', '', 'lao@gmail.com'),
@@ -179,7 +179,7 @@ INSERT INTO `nhanvien` (`MANV`, `TENNV`, `NGAYSINH`, `SDT`, `CHUCVU`, `TENDN`, `
 ('NV0009', 'Hayate', '2001-12-25', '+84932659844', 'Nhân Viên', 'NV8', 'asd', '', 'te@gmail.com'),
 ('NV0010', 'Jonh', '2001-06-05', '+84903326598', 'Nhân Viên', 'NV9', 'abc', '', 'jonh@gmail.com'),
 ('NV0011', 'Đỗ Bảo Châu', '2001-08-03', '+84933265963', 'Nhân Viên', 'NV10', '2583', '', 'chau@gmail.com'),
-('NV1', 'Nguyễn Thành Luân', '2001-06-06', '0386843039', 'Quản trị viên', 'admin', '1111', '#', '#');
+-- ('NV1', 'Nguyễn Thành Luân', '2001-06-06', '0386843039', 'Quản trị viên', 'admin', '1111', '#', '#');
 
 -- --------------------------------------------------------
 

@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <title>Min max trong mảng</title>
-    <link rel="stylesheet" href="/includes/css/style_page.css">
+    <link rel="stylesheet" href="../../includes/css/style_page.css">
 
 </head>
 
@@ -128,7 +128,7 @@
 
                 </tr>
                 <tr>
-                    <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
+                <td><a href="../../website/exercise.php"><input type="button" value="Trở về"></a></td>
                 </tr>
 
 

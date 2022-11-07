@@ -43,7 +43,7 @@
                 echo  "<td width='400px' align='center'>
                             <p> <b>$rows[0]</b> </p>
                             <p >$rows[2] - $rows[3] gram - $rows[4]</p> 
-                            <img width='100px' height = '120px' src='./anh/$rows[5]' />
+                            <img width='100px' height = '120px' src='../../images/$rows[5]' />
                         </td>";
                 $n++;
             }

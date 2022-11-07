@@ -8,7 +8,7 @@
 
     <title>Tính tiền điện</title>
 
-    <link rel="stylesheet" href="/includes/css/style_page.css">
+    <link rel="stylesheet" href="../../includes/css/style_page.css">
     
     <style>
         td {
@@ -100,7 +100,7 @@
                 </tr>
                 <tr>
                    
-                    <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
+                    <td><a href="../../website/exercise.php"><input type="button" value="Trở về"></a></td>
                     <td><input type="submit" value="   Tính   " name="tinh" /></td>
                 </tr>
             </table>

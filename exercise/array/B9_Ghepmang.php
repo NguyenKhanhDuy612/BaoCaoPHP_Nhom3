@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ghép mảng</title>
 
-    <link rel="stylesheet" href="/includes/css/style_page.css">
+    <link rel="stylesheet" href="../../includes/css/style_page.css">
 
 
 </head>
@@ -149,7 +149,7 @@
                     <td colspan="2" align="center"><label>(Các phần tử trong mảng sẽ cách nhau bằng dấu ",")</label></td>
                 </tr>
                 <tr>
-                <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
+                <td><a href="../../website/exercise.php"><input type="button" value="Trở về"></a></td>
                 </tr>
 
             </table>

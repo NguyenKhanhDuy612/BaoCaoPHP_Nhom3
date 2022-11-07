@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Các lớp đơn giản</title>
-    <link rel="stylesheet" href="/includes/css/style_page.css">
+    <link rel="stylesheet" href="../../includes/css/style_page.css">
    
 </head>
 
@@ -281,7 +281,7 @@
                 </td>
             </tr>
             <tr>
-            <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
+            <td><a href="../../website/exercise.php"><input type="button" value="Trở về"></a></td>
                 <td><input type="submit" name="hthi" size="20" value="   Xử lí  " /></td>
                
             </tr>

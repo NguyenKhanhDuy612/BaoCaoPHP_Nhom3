@@ -102,7 +102,7 @@
 				</td>
 			</tr>
             <tr>
-            <td><a href="/website/exercise.php"><input type="button" value="Trở về"></a></td>
+			<td><a href="../../website/exercise.php"><input type="button" value="Trở về"></a></td>
 				<td><input type="submit" name="xl" value="Xử lý" style="background: cyan"></td>
                 
 			</tr>
