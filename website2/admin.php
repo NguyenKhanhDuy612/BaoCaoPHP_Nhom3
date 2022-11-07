@@ -78,7 +78,7 @@
             }
             echo "</table>";
             echo "<center>
-            <a href='/website2/admin.php'><input class='rounded-pill mb-3  btn btn-primary' type='button' value='Trở về'></a>
+            <a href='admin.php'><input class='rounded-pill mb-3  btn btn-primary' type='button' value='Trở về'></a>
             </center>";
             echo "</div>";
         } else {
