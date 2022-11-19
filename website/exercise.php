@@ -41,8 +41,8 @@
                     <a href="#">Thông tin sữa</a>
                     <ul class="third-level-menu">
                         <li><a href="../exercise/mysql/B7_Sanpham.php">Thông tin sản phẩm</a></li>
-                        <li><a href="../exercise/mysql/B8_Chitietsanphamcophantrang.php">Chi tiết sản phẩm 2</a></li>
-                        <li><a href="../exercise/mysql/B5_Thongtinsua2.php">Thông tin sản phẩm 2</a></li>
+                        <li><a href="../exercise/mysql/B8_Chitietsanphamcophantrang.php">Chi tiết</a></li>
+                        <!-- <li><a href="../exercise/mysql/B5_Thongtinsua2.php">Thông tin sản phẩm 2</a></li> -->
                     </ul>
                 </li>
                 <li><a href="#">Tìm kiếm</a>

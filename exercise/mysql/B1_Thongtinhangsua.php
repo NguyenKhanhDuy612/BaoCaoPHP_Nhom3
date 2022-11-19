@@ -58,7 +58,7 @@ if(mysqli_num_rows($result)<>0)
         $stt += 1;
     }
 }
-
+echo "<td><a href='../../website/exercise.php'><input type='button'value='Trở về'></a></td>";
 echo"</table>";
 
 ?>

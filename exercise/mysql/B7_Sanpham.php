@@ -64,6 +64,7 @@
            
         }
     }
+   
     echo "</table>";
    
 
@@ -87,7 +88,7 @@
         . ($_GET['page'] + 1) . ">></a>";
     echo '</p>';
     // echo 'Tong so trang la: ' . $maxPage;
-
+    echo "<td><a href='../../website/exercise.php'><input type='button'value='Trở về'></a></td>";
     ?>
 <?php include('../../includes/html/footer.html') ?>
 </body>
