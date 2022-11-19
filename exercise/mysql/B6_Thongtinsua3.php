@@ -52,6 +52,7 @@
             }
         }
     }
+    echo "<a href='../../website/exercise.php'><input type='button'value='Trở về'></a>";
     echo "</table>";
 
     $re = mysqli_query($conn, 'select * from sua');
